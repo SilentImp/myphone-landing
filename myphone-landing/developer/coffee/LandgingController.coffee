@@ -23,10 +23,6 @@ class LandgingController
 
   submit: (event)=>
     event.preventDefault()
-
-    if !Modernizr.input.required
-      console.log('validate by code')
-
     $.post(this.form.attr('action'), this.form.serialize()).complete(@formSend)
 
   formSend: (responce)=>
