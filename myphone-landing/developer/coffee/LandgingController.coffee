@@ -9,7 +9,6 @@ class LandgingController
     @form = $('.register-form')
     
     @timer = $('.time')
-    @moment = new moment()
     @ti = 0
     window.setInterval @timerUpdate, 1000
     @timerUpdate()
@@ -36,7 +35,7 @@ class LandgingController
     else
       sepator = " "
     @ti++
-    @timer.text(@moment.format("h"+sepator+"mm"))
+    @timer.text(moment().format("h"+sepator+"mm"))
 
   selectLanguage: (event)=>
     event.preventDefault()
