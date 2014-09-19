@@ -18,6 +18,7 @@ class LandgingController
     @message = this.form.prev()
 
     @lang = $ 'nav.language'
+    @lang.on this.itype, @selectLanguage
     @lang.find('a').on this.itype, @selectLanguage
 
     @form.find('button').on this.itype, @trysubmit
@@ -25,10 +26,9 @@ class LandgingController
 
   selectLanguage: (event)=>
     event.preventDefault()
-    link = $ event.currentTarget
-    @lang.find('.selected').removeClass 'selected'
-    link.addClass 'selected'
-    @html.attr 'lang', link.attr('data-lang')
+    event.stopPropagation()
+    @lang.find('a').toggleClass 'selected'
+    @html.attr 'lang', @lang.find('.selected').attr('data-lang')
 
   submit: (event)=>
     event.preventDefault()
