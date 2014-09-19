@@ -14,7 +14,6 @@ pngmin      = require 'gulp-pngmin'
 prettify    = require 'gulp-html-prettify'
 cssbeautify = require 'gulp-cssbeautify'
 deploy      = require 'gulp-gh-pages'
-buildBranch = require 'buildbranch'
 ghpages     = require 'gh-pages'
 path        = require 'path'
 
@@ -113,23 +112,8 @@ gulp.task('js', ()->
     .pipe(gulp.dest(prod_path.js))
 )
 
+
 gulp.task('deploy', ()->
-  gulp.src('../myphone-landing/production/**').pipe(deploy({
-    push: true,
-    branch: 'gh-pages',
-    remoteUrl: 'git@github.com:SilentImp/myphone-landing.git'
-  }))
-)
-
-gulp.task('deployme', ()->
-  buildBranch({ folder: 'production' }, (err)->
-    if err
-      throw err
-    console.log('Published!')
-  )
-)
-
-gulp.task('gh', ()->
   ghpages.publish(path.join(__dirname, 'production'), {
       repo: 'https://github.com/SilentImp/myphone-landing.git',
       branch: 'gh-pages'
