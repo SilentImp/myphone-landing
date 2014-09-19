@@ -1,4 +1,4 @@
-# Fidobank
+# MyPhone
 
 Promo page for [MyPhone][1]. 
 
