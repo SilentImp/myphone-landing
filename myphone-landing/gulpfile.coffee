@@ -14,6 +14,7 @@ pngmin      = require 'gulp-pngmin'
 prettify    = require 'gulp-html-prettify'
 cssbeautify = require 'gulp-cssbeautify'
 deploy      = require 'gulp-gh-pages'
+buildBranch = require 'buildbranch'
 
 dev_path =
   jade:       'developer/jade/**.jade'
@@ -116,6 +117,14 @@ gulp.task('deploy', ()->
     branch: 'gh-pages',
     remoteUrl: 'git@github.com:SilentImp/myphone-landing.git'
   }))
+)
+
+gulp.task('deployme', ()->
+  buildBranch({ folder: 'production' }, (err)->
+    if err
+      throw err
+    console.log('Published!')
+  )
 )
 
 
