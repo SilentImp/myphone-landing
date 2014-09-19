@@ -436,6 +436,22 @@ body .page .fb-like:hover {
         border-bottom-color: #fff;
     }
 
+    html body .page .ok-message label.code,
+  html body .page .register-form label.code {
+        width: 10%;
+        margin-right: 5%;
+    }
+
+    html body .page .ok-message label.code input,
+  html body .page .register-form label.code input {
+        width: 100%;
+    }
+
+    html body .page .ok-message label.tel,
+  html body .page .register-form label.tel {
+        width: 85%;
+    }
+
     html body .page .ok-message label input,
   html body .page .register-form label input {
         width: 100%;
