@@ -15,6 +15,8 @@ prettify    = require 'gulp-html-prettify'
 cssbeautify = require 'gulp-cssbeautify'
 deploy      = require 'gulp-gh-pages'
 buildBranch = require 'buildbranch'
+ghpages     = require 'gh-pages'
+path        = require 'path'
 
 dev_path =
   jade:       'developer/jade/**.jade'
@@ -124,6 +126,17 @@ gulp.task('deployme', ()->
     if err
       throw err
     console.log('Published!')
+  )
+)
+
+gulp.task('gh', ()->
+  ghpages.publish(path.join(__dirname, 'production'), {
+      repo: 'https://github.com/SilentImp/myphone-landing.git',
+      branch: 'gh-pages'
+    }, (err)->
+      if err
+        throw err
+      console.log('Published!')
   )
 )
 

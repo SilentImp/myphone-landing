@@ -1,36 +1,48 @@
 class LandgingController
-  constructor: ()->
+  constructor: ->
+
+    @itype = 'click';
+    @html = $ 'html'
+    if @html.hasClass('touch')
+      @itype = 'touchstart'
+
+    @form = $('.register-form')
+
+
     $.mask.definitions['c'] = "[А-Яа-я]"
-    $('input.tel').mask "(999) 999-99-99"
-    $('input.cyr').mask "cc?cccccccccccccccccccc"
-    $('input.code').mask "+9?999"
+    @form.find('input.tel').mask "(999) 999-99-99"
+    @form.find('input.cyr').mask "cc?cccccccccccccccccccc"
+    @form.find('input.code').mask "+9?999"
     
-    this.form = $ '.register-form'
-    this.message = $ '.ok-message'
+    
+    @message = this.form.prev()
 
-    this.lang = $ 'nav.language'
-    this.lang.find('a').on 'click', @selectLanguage
+    @lang = $ 'nav.language'
+    @lang.find('a').on this.itype, @selectLanguage
 
-    this.form.find('button').on 'click', @trysubmit
-    this.form.on 'submit', @submit
+    @form.find('button').on this.itype, @trysubmit
+    @form.on 'submit', @submit
 
   selectLanguage: (event)=>
     event.preventDefault()
     link = $ event.currentTarget
-    this.lang.find('.selected').removeClass 'selected'
+    @lang.find('.selected').removeClass 'selected'
     link.addClass 'selected'
-    $('html').attr 'lang', link.attr('data-lang')
+    @html.attr 'lang', link.attr('data-lang')
 
   submit: (event)=>
     event.preventDefault()
-    $.post(this.form.attr('action'), this.form.serialize()).complete(@formSend)
+    form = $ event.currentTarget
+    $.post(form.attr('action'), form.serialize()).complete(@formSend)
 
   formSend: (responce)=>
-    this.form.hide()
-    this.message.show()
+    @form.hide()
+    @message.show()
 
   trysubmit: (event)=>
-    this.form.addClass('validation-start')
+    button = $ event.currentTarget
+    form = button.closest('form.register-form')
+    form.addClass('validation-start')
 
 
 $(document).ready ()->
