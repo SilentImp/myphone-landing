@@ -86,7 +86,21 @@ body header nav.language {
     z-index: 5;
 }
 
+body header nav.language .slider {
+    position: absolute;
+    z-index: 1;
+    width: 30px;
+    height: 26px;
+    left: 43px;
+    top: 4px;
+    border-radius: 12px;
+    background-color: #52a5d6;
+    transition: left 0.25s;
+}
+
 body header nav.language a {
+    position: relative;
+    z-index: 2;
     vertical-align: middle;
     width: 30px;
     height: 26px;
@@ -98,18 +112,22 @@ body header nav.language a {
     text-align: center;
     text-decoration: none;
     float: right;
+    transition: color 0.25s;
 }
 
 body header nav.language a.selected {
     pointer-events: none;
     cursor: default;
-    background-color: #52a5d6;
     color: #206186;
     font-weight: bold;
 }
 
 body header nav.language a:first-child {
     float: left;
+}
+
+body header nav.language a:first-child.selected~.slider {
+    left: 4px;
 }
 
 body header .logotype {
@@ -225,14 +243,13 @@ body .page .register-form fieldset label {
 body .page .register-form fieldset label.code {
     display: inline-block;
     vertical-align: middle;
-    width: 60px;
-    margin-right: 20px;
+    width: 70px;
 }
 
 body .page .register-form fieldset label.tel {
     display: inline-block;
     vertical-align: middle;
-    width: 158px;
+    width: 168px;
 }
 
 body .page .register-form fieldset label.error input {
@@ -259,22 +276,21 @@ body .page .register-form fieldset label.error input:-ms-input-placeholder {
 body .page .register-form fieldset input {
     outline: none;
     background: none;
-    padding: 0;
     margin: 0;
     height: 28px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
     border-style: none;
-    width: 238px;
+    width: 100%;
     color: #fff;
+    padding: 0 38px 0 0;
+    box-sizing: border-box;
 }
 
 body .page .register-form fieldset input.code {
-    width: 60px;
     height: 28px;
-    font-size: 16px;
     line-height: 28px;
-    text-align: right;
+    padding: 0;
 }
 
 body .page .register-form.validation-start input:invalid {
@@ -296,6 +312,10 @@ body .page .register-form.validation-start input:invalid::-moz-placeholder {
 
 body .page .register-form.validation-start input:invalid:-ms-input-placeholder {
     color: #cb1313;
+}
+
+body .page .register-form.validation-start input:invalid.code {
+    background: none;
 }
 
 body .page .title {
@@ -331,29 +351,6 @@ body .page .fb-like {
 body .page .fb-like:hover {
     background-color: #186fa2;
     background-position: 100% -64px;
-}
-
-@media screen and (min-width: 1400px) {
-    html body:before {
-        left: auto;
-        width: 658px;
-        background-position: 0 68px;
-    }
-
-    html body:after {
-        left: auto;
-        width: 637px;
-    }
-
-    html body header {
-        left: auto;
-        margin-right: 254px;
-    }
-
-    html body .page {
-        float: right;
-        margin-right: 254px;
-    }
 }
 
 @media screen and (max-width: 970px) {
@@ -438,8 +435,7 @@ body .page .fb-like:hover {
 
     html body .page .ok-message label.code,
   html body .page .register-form label.code {
-        width: 10%;
-        margin-right: 5%;
+        width: 30%;
     }
 
     html body .page .ok-message label.code input,
@@ -449,7 +445,7 @@ body .page .fb-like:hover {
 
     html body .page .ok-message label.tel,
   html body .page .register-form label.tel {
-        width: 85%;
+        width: 70%;
     }
 
     html body .page .ok-message label input,
