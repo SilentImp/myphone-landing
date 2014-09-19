@@ -22,6 +22,7 @@ html(lang="ru")
     script(src="js/modernizr/modernizr.js")
     script(src="js/jquery/dist/jquery.min.js")
     script(src="js/jquery.maskedinput/jquery.maskedinput.min.js")
+    script(src="js/moment/moment.js")
     script(src="js/LandgingController.js", async)
     link(rel="stylesheet", href="css/styles.css")
   body
@@ -48,6 +49,7 @@ html(lang="ru")
 
       form.register-form(action="http://myphone.ae/register/", method="post")
         h2.register-form-title Регистрация участника
+        .time
         datalist(id="codes")
           option(value="+7") Россия
           option(value="+7") Казахстан
@@ -83,6 +85,7 @@ html(lang="ru")
 
       form.register-form(action="http://myphone.ae/register/", method="post")
         h2.register-form-title Қатысушының тірке-
+        .time
         datalist(id="codes")
           option(value="+7") Россия
           option(value="+7") Казахстан

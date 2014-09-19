@@ -194,6 +194,19 @@ body .page .register-form {
     background: linear-gradient(to bottom, #1a5774 0%, #ccb27f 100%);
 }
 
+body .page .register-form .time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    font-size: 10px;
+    line-height: 20px;
+    font-family: monospace;
+    color: #fff;
+    text-align: center;
+}
+
 body .page .register-form .register-form-title {
     height: 42px;
     background: url("../images/interface.png") 50% 5px no-repeat;
@@ -285,6 +298,22 @@ body .page .register-form fieldset input {
     color: #fff;
     padding: 0 38px 0 0;
     box-sizing: border-box;
+}
+
+body .page .register-form fieldset input::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+body .page .register-form fieldset input:-moz-placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+body .page .register-form fieldset input::-moz-placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+body .page .register-form fieldset input:-ms-input-placeholder {
+    color: rgba(255,255,255,0.6);
 }
 
 body .page .register-form fieldset input.code {

@@ -166,6 +166,19 @@ body
       left 50%
       margin-left 130px
       background linear-gradient(to bottom, rgba(26,87,116,1) 0%,rgba(204,178,127,1) 100%)
+      .time
+        position absolute
+        top 0
+        left 0
+        right 0
+        height 20px
+        font-size 10px
+        line-height 20px
+        font-family monospace 
+        color #FFF 
+        text-align center
+        
+        
       .register-form-title
         height 42px
         background url('../images/interface.png') 50% 5px no-repeat
@@ -242,6 +255,17 @@ body
           color #FFF 
           padding 0 38px 0 0 
           box-sizing border-box
+          &::-webkit-input-placeholder
+            color rgba(#fff, .6)
+
+          &:-moz-placeholder
+            color rgba(#fff, .6)
+
+          &::-moz-placeholder
+            color rgba(#fff, .6)
+
+          &:-ms-input-placeholder
+            color rgba(#fff, .6)
         
           &.code
             height 28px

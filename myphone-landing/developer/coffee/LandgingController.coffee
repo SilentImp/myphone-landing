@@ -7,6 +7,11 @@ class LandgingController
       @itype = 'touchstart'
 
     @form = $('.register-form')
+    
+    @timer = $('.time')
+    @moment = new moment()
+    @ti = 0
+    window.setInterval @timerUpdate, 1000
 
 
     $.mask.definitions['c'] = "[А-Яа-я]"
@@ -23,6 +28,14 @@ class LandgingController
 
     @form.find('button').on this.itype, @trysubmit
     @form.on 'submit', @submit
+
+  timerUpdate: =>
+    if (@ti%2)==0
+      sepator = ":"
+    else
+      sepator = " "
+    @ti++
+    @timer.text(@moment.format("h"+sepator+"mm"))
 
   selectLanguage: (event)=>
     event.preventDefault()
