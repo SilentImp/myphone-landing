@@ -112,7 +112,7 @@ gulp.task('js', ()->
 )
 
 gulp.task('deploy', ()->
-  gulp.src('production').pipe(deploy({
+  gulp.src('production/*').pipe(deploy({
     push: true,
     branch: 'gh-pages',
     remoteUrl: 'git@github.com:SilentImp/myphone-landing.git'
