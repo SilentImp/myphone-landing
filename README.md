@@ -10,7 +10,7 @@ Promo page for [MyPhone][1].
 * [coffee][3]
 * [jade][4]
 
-### Packet manager
+### Package manager
 
 * [bower][13]
 
