@@ -13,7 +13,6 @@ svg2png     = require 'gulp-svg2png'
 pngmin      = require 'gulp-pngmin'
 prettify    = require 'gulp-html-prettify'
 cssbeautify = require 'gulp-cssbeautify'
-deploy      = require 'gulp-gh-pages'
 ghpages     = require 'gh-pages'
 path        = require 'path'
 
