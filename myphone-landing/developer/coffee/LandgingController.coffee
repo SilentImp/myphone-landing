@@ -12,6 +12,7 @@ class LandgingController
     @moment = new moment()
     @ti = 0
     window.setInterval @timerUpdate, 1000
+    @timerUpdate()
 
 
     $.mask.definitions['c'] = "[А-Яа-я]"
