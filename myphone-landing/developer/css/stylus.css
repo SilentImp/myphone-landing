@@ -1,0 +1,443 @@
+html[lang="ru"] .page[lang="ru"] {
+    display: block;
+}
+
+html[lang="ru"] .page[lang="az"] {
+    display: none;
+}
+
+html[lang="az"] .page[lang="ru"] {
+    display: none;
+}
+
+html[lang="az"] .page[lang="az"] {
+    display: block;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    min-height: 750px;
+}
+
+body {
+    background-color: #4395c5;
+    color: #fff;
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 32px;
+    min-height: 100%;
+    position: relative;
+}
+
+body:after {
+    content: ".";
+    overflow: hidden;
+    text-indent: -9999px;
+    display: block;
+    position: absolute;
+    width: 414px;
+    height: 300px;
+    top: 241px;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    z-index: 3;
+    margin: 0 0 0 65px;
+    pointer-events: none;
+    background: url("../images/fingers.png") 0 0 no-repeat;
+}
+
+body:before {
+    content: ".";
+    overflow: hidden;
+    text-indent: -9999px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: #4395c5 url("../images/iphone.png") 44px 68px no-repeat;
+}
+
+body header {
+    position: absolute;
+    width: 896px;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+}
+
+body header nav.language {
+    position: absolute;
+    width: 69px;
+    height: 26px;
+    background-color: #2d76a0;
+    border-radius: 16px;
+    top: 87px;
+    left: 206px;
+    font-size: 0;
+    line-height: 26px;
+    padding: 4px;
+    z-index: 5;
+}
+
+body header nav.language a {
+    vertical-align: middle;
+    width: 30px;
+    height: 26px;
+    line-height: 26px;
+    color: #52a5d6;
+    font-size: 11px;
+    border-radius: 12px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+}
+
+body header nav.language a.selected {
+    pointer-events: none;
+    cursor: default;
+    background-color: #52a5d6;
+    color: #206186;
+    font-weight: bold;
+}
+
+body header nav.language a:first-child {
+    float: left;
+}
+
+body header .logotype {
+    text-indent: -9999px;
+    width: 200px;
+    height: 50px;
+    background: url("../images/logotype.png") 0 0 no-repeat;
+    position: absolute;
+    left: 2px;
+    top: 78px;
+}
+
+body .page {
+    width: 464px;
+    margin: auto;
+    padding: 156px 416px 0 16px;
+    position: relative;
+}
+
+body .page .ok-message {
+    z-index: 2;
+    display: none;
+    position: absolute;
+    width: 288px;
+    height: 512px;
+    background-color: #fff;
+    top: 145px;
+    left: 50%;
+    margin-left: 130px;
+    background: url("../images/done.png") 50% 410px no-repeat, linear-gradient(to bottom, #1a5774 0%, #ccb27f 100%);
+    line-height: 375px;
+}
+
+body .page .ok-message .ok-message-text {
+    margin: 0 25px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
+}
+
+body .page .ok-message .ok-message-title {
+    height: 42px;
+    background: url("../images/interface.png") 50% 5px no-repeat;
+    font-size: 16px;
+    line-height: 36px;
+    padding: 20px 16px 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    font-weight: normal;
+}
+
+body .page .register-form {
+    z-index: 1;
+    position: absolute;
+    width: 288px;
+    height: 512px;
+    background-color: #fff;
+    top: 145px;
+    left: 50%;
+    margin-left: 130px;
+    background: linear-gradient(to bottom, #1a5774 0%, #ccb27f 100%);
+}
+
+body .page .register-form .register-form-title {
+    height: 42px;
+    background: url("../images/interface.png") 50% 5px no-repeat;
+    font-size: 16px;
+    line-height: 36px;
+    padding: 20px 16px 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    font-weight: normal;
+}
+
+body .page .register-form nav button {
+    margin: auto;
+    position: absolute;
+    bottom: 39px;
+    left: 0;
+    right: 0;
+    height: 48px;
+    border-radius: 5px;
+    background: #29824c;
+    text-align: center;
+    padding: 0;
+    font-size: 16px;
+    line-height: 48px;
+    border-style: none;
+    color: #fff;
+    width: 209px;
+    cursor: pointer;
+}
+
+body .page .register-form nav button:hover {
+    background-color: #21683d;
+}
+
+body .page .register-form fieldset {
+    padding: 41px 25px 0;
+}
+
+body .page .register-form fieldset label {
+    display: block;
+    padding: 31px 0 0;
+    border-bottom: 1px solid #b7b7b7;
+}
+
+body .page .register-form fieldset label.code {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    margin-right: 20px;
+}
+
+body .page .register-form fieldset label.tel {
+    display: inline-block;
+    vertical-align: middle;
+    width: 158px;
+}
+
+body .page .register-form fieldset label.error input {
+    color: #cb1313;
+    background: url("../images/error.png") 100% 50% no-repeat;
+}
+
+body .page .register-form fieldset label.error input::-webkit-input-placeholder {
+    color: #cb1313;
+}
+
+body .page .register-form fieldset label.error input:-moz-placeholder {
+    color: #cb1313;
+}
+
+body .page .register-form fieldset label.error input::-moz-placeholder {
+    color: #cb1313;
+}
+
+body .page .register-form fieldset label.error input:-ms-input-placeholder {
+    color: #cb1313;
+}
+
+body .page .register-form fieldset input {
+    outline: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    height: 28px;
+    font-size: 16px;
+    line-height: 28px;
+    border-style: none;
+    width: 238px;
+    color: #fff;
+}
+
+body .page .register-form fieldset input.code {
+    width: 60px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: right;
+}
+
+body .page .register-form.validation-start input:invalid {
+    color: #cb1313;
+    background: url("../images/error.png") 100% 50% no-repeat;
+}
+
+body .page .register-form.validation-start input:invalid::-webkit-input-placeholder {
+    color: #cb1313;
+}
+
+body .page .register-form.validation-start input:invalid:-moz-placeholder {
+    color: #cb1313;
+}
+
+body .page .register-form.validation-start input:invalid::-moz-placeholder {
+    color: #cb1313;
+}
+
+body .page .register-form.validation-start input:invalid:-ms-input-placeholder {
+    color: #cb1313;
+}
+
+body .page .title {
+    font-size: 32px;
+    line-height: 48px;
+    margin: 0 0 32px;
+    font-weight: normal;
+}
+
+body .page p {
+    margin: 0 0 32px;
+}
+
+body .page a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+body .page a:hover {
+    text-decoration: none;
+}
+
+body .page .fb-like {
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    height: 64px;
+    line-height: 64px;
+    padding: 0 80px 0 30px;
+    background: #247bae url("../images/fb-like.png") 100% 0 no-repeat;
+}
+
+body .page .fb-like:hover {
+    background-color: #186fa2;
+    background-position: 100% -64px;
+}
+
+@media screen and (min-width: 1400px) {
+    html body:before {
+        left: auto;
+        width: 658px;
+        background-position: 0 68px;
+    }
+
+    html body:after {
+        left: auto;
+        width: 637px;
+    }
+
+    html body header {
+        left: auto;
+        margin-right: 254px;
+    }
+
+    html body .page {
+        float: right;
+        margin-right: 254px;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    html body:after,
+  html body:before {
+        display: none;
+        background: none;
+    }
+
+    html body header {
+        width: auto;
+        position: relative;
+    }
+
+    html body .page {
+        width: auto;
+        padding: 156px 25px 25px;
+    }
+
+    html body .page .ok-message,
+  html body .page .register-form {
+        width: auto;
+        position: relative;
+        left: auto;
+        bottom: auto;
+        right: auto;
+        top: auto;
+        margin: 48px auto;
+        background: none;
+        line-height: inherit;
+        height: auto;
+    }
+
+    html body .page .ok-message button,
+  html body .page .register-form button {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        right: auto;
+        left: auto;
+        margin: 20px 0 0;
+    }
+
+    html body .page .ok-message .register-form-title,
+  html body .page .register-form .register-form-title,
+  html body .page .ok-message .ok-message-title,
+  html body .page .register-form .ok-message-title {
+        background: none;
+        text-align: left;
+        width: auto;
+        padding: 0;
+        font-size: 32px;
+        line-height: 48px;
+        margin: 0 0 32px;
+        font-weight: normal;
+    }
+
+    html body .page .ok-message .ok-message-text,
+  html body .page .register-form .ok-message-text {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+
+    html body .page .ok-message .ok-message-text p,
+  html body .page .register-form .ok-message-text p {
+        margin: 0 0 32px;
+        font-size: 17px;
+        line-height: 32px;
+    }
+
+    html body .page .ok-message fieldset,
+  html body .page .register-form fieldset {
+        padding: 0;
+        margin: 0 0 32px;
+    }
+
+    html body .page .ok-message label,
+  html body .page .register-form label {
+        border-bottom-color: #fff;
+    }
+
+    html body .page .ok-message label input,
+  html body .page .register-form label input {
+        width: 100%;
+    }
+}
