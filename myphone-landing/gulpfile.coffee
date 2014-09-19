@@ -16,7 +16,6 @@ cssbeautify = require 'gulp-cssbeautify'
 deploy      = require 'gulp-gh-pages'
 
 dev_path =
-  production: 'production/'
   jade:       'developer/jade/**.jade'
   css:        'developer/css/**.css'
   css_tmp:    'developer/css/'
@@ -112,11 +111,11 @@ gulp.task('js', ()->
 )
 
 gulp.task('deploy', ()->
-  gulp.src(dev_path.production)
-    .pipe(deploy({
-      branch: 'gh-pages',
-      remoteUrl: 'git@github.com:SilentImp/myphone-landing.git'
-    }))
+  gulp.src('production').pipe(deploy({
+    push: true,
+    branch: 'gh-pages',
+    remoteUrl: 'git@github.com:SilentImp/myphone-landing.git'
+  }))
 )
 
 
