@@ -213,19 +213,86 @@ body
           
       fieldset
         padding 41px 25px 0
+        .code
+          display inline-block
+          vertical-align bottom
+          width 70px
+          padding 31px 0 0 
+          height 32px 
+          position relative
+          border-bottom 1px solid #b7b7b7
+          font-size 12px
+          &.changed
+            .list,
+            &:hover .list
+              display none
+            
+          .current
+            font-size 12px
+            position relative
+            &:after
+              content ""
+              display block
+              width 0
+              height 0
+              overflow hidden
+              font-size 0
+              line-height 0
+              border-color #fff transparent transparent
+              border-width 5px 5px 0
+              border-style solid
+              position absolute
+              right 16px
+              top 50%
+              margin-top -1px 
+          &:hover .list
+            display block
+          .list
+            display none
+            position absolute
+            top 100%
+            left -16px
+            background-color #FFF
+            width 270px
+            color #333
+            overflow auto
+            max-height 128px
+            b
+              padding 0 0 0 16px
+              float left
+              color #999 
+            span
+              padding 0 32px 0 0  
+              float right
+            input:checked+label
+              background-color lighten(#4395C5, 65%)
+              b
+                color #333 
+            label
+              clear left
+              overflow hidden
+              position relative
+              cursor pointer
+              &:hover
+                background-color lighten(#4395C5, 80%)
+
+            input
+              position absolute
+              left -2000px
+              opacity 0
+             
+            label
+              padding 0
+              border-style none
+            
         label
           display block
           padding 31px 0 0 
           border-bottom 1px solid #b7b7b7
-          
-          &.code
-            display inline-block
-            vertical-align middle
-            width 70px
             
           &.tel
             display inline-block
-            vertical-align middle
+            vertical-align bottom
             width 168px 
             
           &.error input

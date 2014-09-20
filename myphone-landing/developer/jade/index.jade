@@ -39,7 +39,7 @@ html(lang="ru")
       p Это не розыгрыш и даже не тестовая страница :) По случаю открытия магазина минимальных цен на смартфоны, мы хотим подарить тебе, случайному везунчику, абсолютно новый iPhone 6!
       p Для того, чтоб выиграть iPhone 6 или один из подарочных сертификатов нужно всего-лишь зарегистрироваться и немного подождать...
 
-      a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=Хочешь выиграть абсолютно новый iPhone 6?") Рассказать друзьям
+      a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=%D0%A5%D0%BE%D1%87%D0%B5%D1%88%D1%8C%20%D0%B2%D1%8B%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%20%D0%B0%D0%B1%D1%81%D0%BE%D0%BB%D1%8E%D1%82%D0%BD%D0%BE%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20iPhone%206%3F") Рассказать друзьям
       
       .ok-message
         h2.ok-message-title Ура! Все получилось!
@@ -50,22 +50,36 @@ html(lang="ru")
       form.register-form(action="http://myphone.ae/register/", method="post")
         h2.register-form-title Регистрация участника
         .time
-        datalist(id="codes")
-          option(value="+7") Россия
-          option(value="+7") Казахстан
-          option(value="+996") Азейрбайджан
-          option(value="+38") Украина
         fieldset
-          label(for="register-name")
-            input.cyr(required="required", placeholder="Имя", type="text", name="name", id="register-name")
-          label(for="register-surname")
-            input.cyr(required="required", placeholder="Фамилия", type="text", name="surname", id="register-surname")
-          label.code(for="register-code")
-            input.code(list="codes", required="required", placeholder="Код", type="text", name="code", id="register-code")
-          label.tel(for="register-tel")
-            input.tel(required="required", placeholder="Номер телефона", type="tel", name="tel", id="register-tel")
-          label(for="register-email")
-            input(required="required", placeholder="E-mail", type="email", name="email", id="register-email")
+          label(for="register-name-ru")
+            input.cyr(required="required", autocomplete="off" placeholder="Имя", type="text", name="name", id="register-name-ru")
+          label(for="register-surname-ru")
+            input.cyr(required="required", autocomplete="off", placeholder="Фамилия", type="text", name="surname", id="register-surname-ru")
+          
+          .code.code-widget
+            .current +7
+            .list
+              input(type="radio", name="code", value="+7", id="ru-ru", checked="checked") 
+              label.options(for="ru-ru")
+                span Россия
+                b +7 
+              input(type="radio", name="code", value="+7", id="kz-ru") 
+              label.options(for="kz-ru")
+                span Казахстан
+                b +7 
+              input(type="radio", name="code", value="+996", id="az-ru")
+              label.options(for="az-ru")
+                span Азейрбайджан
+                b +996 
+              input(type="radio", name="code", value="+38", id="ua-ru") 
+              label.options(for="ua-ru")
+                span Украина
+                b +38
+
+          label.tel(for="register-tel-ru")
+            input.tel(required="required", autocomplete="off", placeholder="Номер телефона", type="tel", name="tel", id="register-tel-ru")
+          label(for="register-email-ru")
+            input(required="required", autocomplete="off", placeholder="E-mail", type="email", name="email", id="register-email-ru")
         nav
           button(type="submit") Зарегистрироваться
 
@@ -75,7 +89,7 @@ html(lang="ru")
       p Сол ша уақиға ең төмен бағаның дүкенінің ашылымының смартфоны розыгрыш және тіпті тестілік бет :), біз сен, көлденең везунчику, абсолютті жаңа iPhone 6 подарить қалаймыз!
       p Үшін ана, жеңу чтоб iPhone 6 немесе бір сыйдың серитификаттарынан керек небәрі-ғана тіркел- және аз күте тұр-...
 
-      a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=Хочешь выиграть абсолютно новый iPhone 6?") Әңгімеле- достарға
+      a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=%D0%A5%D0%BE%D1%87%D0%B5%D1%88%D1%8C%20%D0%B2%D1%8B%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%20%D0%B0%D0%B1%D1%81%D0%BE%D0%BB%D1%8E%D1%82%D0%BD%D0%BE%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20iPhone%206%3F") Әңгімеле- достарға
       
       .ok-message
         h2.ok-message-title Ура! Барлық алды!
@@ -86,22 +100,36 @@ html(lang="ru")
       form.register-form(action="http://myphone.ae/register/", method="post")
         h2.register-form-title Қатысушының тірке-
         .time
-        datalist(id="codes")
-          option(value="+7") Россия
-          option(value="+7") Казахстан
-          option(value="+996") Азейрбайджан
-          option(value="+38") Украина
         fieldset
           label(for="register-name")
-            input.cyr(required="required", placeholder="Ат", type="text", name="name", id="register-name")
+            input.cyr(required="required", autocomplete="off", placeholder="Ат", type="text", name="name", id="register-name")
           label(for="register-surname")
-            input.cyr(required="required", placeholder="Фамилия", type="text", name="surname", id="register-surname")
-          label.code(for="register-code")
-            input.code(list="codes", required="required", placeholder="Код", type="text", name="code", id="register-code")
+            input.cyr(required="required", autocomplete="off", placeholder="Фамилия", type="text", name="surname", id="register-surname")
+
+          .code.code-widget
+            .current +7
+            .list
+              input(type="radio", name="code", value="+7", id="ru-kz", checked="checked") 
+              label.options(for="ru-kz")
+                span Россия
+                b +7 
+              input(type="radio", name="code", value="+7", id="kz-kz") 
+              label.options(for="kz-kz")
+                span Казахстан
+                b +7 
+              input(type="radio", name="code", value="+996", id="az-kz")
+              label.options(for="az-kz")
+                span Азейрбайджан
+                b +996 
+              input(type="radio", name="code", value="+38", id="ua-kz") 
+              label.options(for="ua-kz")
+                span Украина
+                b +38
+
           label.tel(for="register-tel")
-            input.tel(required="required", placeholder="Телефонның нөмірі", type="tel", name="tel", id="register-tel")
+            input.tel(required="required", autocomplete="off", placeholder="Телефонның нөмірі", type="tel", name="tel", id="register-tel")
           label(for="register-email")
-            input(required="required", placeholder="E-mail", type="email", name="email", id="register-email")
+            input(required="required", autocomplete="off", placeholder="E-mail", type="email", name="email", id="register-email")
         nav
           button(type="submit") Тіркел-
 

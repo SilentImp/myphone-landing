@@ -247,21 +247,110 @@ body .page .register-form fieldset {
     padding: 41px 25px 0;
 }
 
+body .page .register-form fieldset .code {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 70px;
+    padding: 31px 0 0;
+    height: 32px;
+    position: relative;
+    border-bottom: 1px solid #b7b7b7;
+    font-size: 12px;
+}
+
+body .page .register-form fieldset .code.changed .list,
+body .page .register-form fieldset .code.changed:hover .list {
+    display: none;
+}
+
+body .page .register-form fieldset .code .current {
+    font-size: 12px;
+    position: relative;
+}
+
+body .page .register-form fieldset .code .current:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    border-color: #fff transparent transparent;
+    border-width: 5px 5px 0;
+    border-style: solid;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -1px;
+}
+
+body .page .register-form fieldset .code:hover .list {
+    display: block;
+}
+
+body .page .register-form fieldset .code .list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    background-color: #fff;
+    width: 270px;
+    color: #333;
+    overflow: auto;
+    max-height: 128px;
+}
+
+body .page .register-form fieldset .code .list b {
+    padding: 0 0 0 16px;
+    float: left;
+    color: #999;
+}
+
+body .page .register-form fieldset .code .list span {
+    padding: 0 32px 0 0;
+    float: right;
+}
+
+body .page .register-form fieldset .code .list input:checked+label {
+    background-color: #bddaeb;
+}
+
+body .page .register-form fieldset .code .list input:checked+label b {
+    color: #333;
+}
+
+body .page .register-form fieldset .code .list label {
+    clear: left;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+body .page .register-form fieldset .code .list label:hover {
+    background-color: #d9eaf3;
+}
+
+body .page .register-form fieldset .code .list input {
+    position: absolute;
+    left: -2000px;
+    opacity: 0;
+}
+
+body .page .register-form fieldset .code .list label {
+    padding: 0;
+    border-style: none;
+}
+
 body .page .register-form fieldset label {
     display: block;
     padding: 31px 0 0;
     border-bottom: 1px solid #b7b7b7;
 }
 
-body .page .register-form fieldset label.code {
-    display: inline-block;
-    vertical-align: middle;
-    width: 70px;
-}
-
 body .page .register-form fieldset label.tel {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
     width: 168px;
 }
 

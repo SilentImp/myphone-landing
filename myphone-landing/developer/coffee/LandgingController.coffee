@@ -13,6 +13,8 @@ class LandgingController
     window.setInterval @timerUpdate, 1000
     @timerUpdate()
 
+    $('.code-widget').find('input').on 'change', @codeChange
+
 
     $.mask.definitions['c'] = "[А-Яа-я]"
     @form.find('input.tel').mask "(999) 999-99-99"
@@ -29,13 +31,24 @@ class LandgingController
     @form.find('button').on this.itype, @trysubmit
     @form.on 'submit', @submit
 
+  codeChange: (event)=>
+    element = $ event.currentTarget
+    wrapper = element.closest('.code-widget')
+    current = wrapper.find('.current')
+    current.text(element.val())
+    wrapper.addClass 'changed'
+    window.setTimeout(()->
+      wrapper.removeClass 'changed'
+    , 500)
+
+
   timerUpdate: =>
     if (@ti%2)==0
       sepator = ":"
     else
       sepator = " "
     @ti++
-    @timer.text(moment().format("h"+sepator+"mm"))
+    @timer.text(moment().format("HH"+sepator+"mm"))
 
   selectLanguage: (event)=>
     event.preventDefault()

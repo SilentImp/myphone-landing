@@ -15,6 +15,7 @@ prettify    = require 'gulp-html-prettify'
 cssbeautify = require 'gulp-cssbeautify'
 ghpages     = require 'gh-pages'
 path        = require 'path'
+w3cjs       = require 'gulp-w3cjs'
 
 dev_path =
   jade:       'developer/jade/**.jade'
@@ -72,6 +73,7 @@ gulp.task('html', ()->
   return gulp.src(dev_path.jade)
     .pipe(jade())
     # .pipe(prettify({indent_char: ' ', indent_size: 4}))
+    .pipe(w3cjs())
     .pipe(htmlmin({collapseWhitespace: false}))
     .pipe(gulp.dest(prod_path.html))
 )
