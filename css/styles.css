@@ -209,6 +209,7 @@ body .page .show-rules:hover {
 }
 
 body .page .rules {
+    margin: auto;
     display: none;
     z-index: 10;
     position: fixed;
