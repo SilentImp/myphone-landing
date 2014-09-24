@@ -126,6 +126,51 @@ body
     margin auto
     padding 156px 416px 0 16px
     position relative
+    .show-rules
+      margin 20px 0 
+      color #a7edff
+      font-size 12px
+      text-decoration none
+      &:hover
+        text-decoration underline
+    .rules
+      display none
+      z-index 10
+      position fixed
+      background-color #3a8bba 
+      top 40px
+      bottom 40px
+      left 40px
+      right 40px
+      box-sizing border-box
+      max-width 1000px
+      max-height 780px
+      padding 40px 80px 40px 40px  
+      font-family Tahoma, Helvetica, Arial, sans-serif
+      font-size 17px
+      line-height 32px
+      color rgba(255, 255, 255, .8)
+      .message
+        position absolute
+        top 40px
+        left 0
+        bottom 40px
+        right 0
+        padding 0 80px 0 40px 
+        overflow auto
+      .title
+        color #FFF
+        font-size 32px
+        line-height 48px
+      .close
+        position absolute
+        width 40px
+        height 40px
+        top 36px
+        right 40px
+        background url('../images/close.png') 50% 50% no-repeat
+        cursor pointer
+        z-index 10
     .ok-message
       z-index 2
       display none
@@ -222,6 +267,7 @@ body
           position relative
           border-bottom 1px solid #b7b7b7
           font-size 12px
+          z-index 50
           &.changed
             .list,
             &:hover .list
@@ -369,7 +415,7 @@ body
       &:hover
         text-decoration none 
     .fb-like
-      margin-top 20px
+      margin 20px 0
       text-decoration none
       display inline-block
       height 64px
@@ -382,6 +428,9 @@ body
     
 @media screen and (max-width: 970px)
   html body
+    .time
+      display none
+      
     &:after
     &:before 
       display none
@@ -435,15 +484,15 @@ body
             line-height 32px
             
         fieldset
+          font-size 0
           padding 0
           margin 0 0 32px
+        .code
+          width 20%
+          border-bottom 1px solid #fff
         label
           border-bottom-color #fff
-          &.code
-            width 30%
-            input
-              width 100%
           &.tel
-            width 70%
+            width 80%
           input
             width 100% 

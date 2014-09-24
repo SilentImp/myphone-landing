@@ -16,6 +16,7 @@ cssbeautify = require 'gulp-cssbeautify'
 ghpages     = require 'gh-pages'
 path        = require 'path'
 w3cjs       = require 'gulp-w3cjs'
+esformatter = require 'gulp-esformatter'
 
 dev_path =
   jade:       'developer/jade/**.jade'
@@ -72,7 +73,7 @@ gulp.task('svg2png', ['svg2png2x'], ()->
 gulp.task('html', ()->
   return gulp.src(dev_path.jade)
     .pipe(jade())
-    # .pipe(prettify({indent_char: ' ', indent_size: 4}))
+    .pipe(prettify({indent_char: ' ', indent_size: 4}))
     .pipe(w3cjs())
     .pipe(htmlmin({collapseWhitespace: false}))
     .pipe(gulp.dest(prod_path.html))
@@ -89,7 +90,7 @@ gulp.task('stylus', ()->
 gulp.task('css', ['stylus'], ()->
   return gulp.src(dev_path.css)
     .pipe(prefix())
-    .pipe(minifyCSS({removeEmpty:true}))
+    # .pipe(minifyCSS({removeEmpty:true}))
     .pipe(concat('styles.css'))
     .pipe(gulp.dest(prod_path.css))
 )
@@ -100,7 +101,8 @@ gulp.task('coffee', ()->
     .pipe(coffee({
       bare: true
       }))
-    .pipe(uglify())
+    # .pipe(uglify())
+    .pipe(esformatter({indent: {value: '  '}}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(prod_path.js))
 )
@@ -108,7 +110,8 @@ gulp.task('coffee', ()->
 gulp.task('js', ()->
   return gulp.src(dev_path.js)
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    # .pipe(uglify())
+    .pipe(esformatter({indent: {value: '  '}}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(prod_path.js))
 )

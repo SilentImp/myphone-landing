@@ -20,6 +20,9 @@ class LandgingController
     @form.find('input.tel').mask "(999) 999-99-99"
     @form.find('input.cyr').mask "cc?cccccccccccccccccccc"
     @form.find('input.code').mask "+9?999"
+
+    $('.rules .close').on @itype, @closeRules
+    $('.show-rules').on @itype, @showRules
     
     
     @message = this.form.prev()
@@ -30,6 +33,14 @@ class LandgingController
 
     @form.find('button').on this.itype, @trysubmit
     @form.on 'submit', @submit
+
+  showRules: (event)=>
+    event.preventDefault()
+    $(event.currentTarget).closest('.page').find('.rules').show()
+
+  closeRules: (event)=>
+    $(event.currentTarget.parentNode).hide()
+    
 
   codeChange: (event)=>
     element = $ event.currentTarget

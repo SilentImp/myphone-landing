@@ -40,6 +40,8 @@ html(lang="ru")
       p Для того, чтоб выиграть iPhone 6 или один из подарочных сертификатов нужно всего-лишь зарегистрироваться и немного подождать...
 
       a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=%D0%A5%D0%BE%D1%87%D0%B5%D1%88%D1%8C%20%D0%B2%D1%8B%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%20%D0%B0%D0%B1%D1%81%D0%BE%D0%BB%D1%8E%D1%82%D0%BD%D0%BE%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20iPhone%206%3F") Рассказать друзьям
+      p
+        a.show-rules(href="/rules/") Условия конкурса
       
       .ok-message
         h2.ok-message-title Ура! Все получилось!
@@ -51,6 +53,7 @@ html(lang="ru")
         h2.register-form-title Регистрация участника
         .time
         fieldset
+          input(type="hidden", name="language", value="ru")
           label(for="register-name-ru")
             input.cyr(required="required", autocomplete="off" placeholder="Имя", type="text", name="name", id="register-name-ru")
           label(for="register-surname-ru")
@@ -83,6 +86,25 @@ html(lang="ru")
         nav
           button(type="submit") Зарегистрироваться
 
+      .rules
+        .close
+        .message
+          h2.title Условия конкурса
+          p Организатор конкурса — интернет-магазин 
+            a(href="http://myphone.ae/") myphone.ae 
+          ul
+            li Призовой фонд конкурса включает в себя один Apple iPhone 6, и два подарочных сертификата, номиналами 200AZN и 100AZN
+            li Период проведения Конкурса: c 20.09.2014 по 20.10.2014 включительно.
+            li Принять участие в конкурсе могут все зарегистрированные пользователи сайта 
+              a(href="http://iphone6.myphone.ae") http://iphone6.myphone.ae
+            li К участию в конкурсе допускаются только пользователи, предоставившие подлинные данные.
+            li Имена Победителей будут опубликованы на финальной странице конкурса 21.10.2014.
+            li Победители будут выбраны случайным образом.
+            li Победители конкурса будут оповещены посредством телефонного звонка и по электронной почте после определения победителей и публикации на странице с результатами конкурса.
+            li Место и время выдачи призов будут уточнены посредством электронной почты.
+            li Для получения Приза, необходимо предъявить удостоверение личности.
+            li Все персональные данные, передаваемые в рамках настоящего конкурса охраняются в соответствии с политикой о конфиденциальности myphone.ae, ознакомиться с ними можно путем перехода на страницу «политика конфиденциальности».
+
 
     section.page(lang="az")
       h2.title Абсолютті жаңа iPhone 6 жеңу қалайсың?
@@ -90,6 +112,8 @@ html(lang="ru")
       p Үшін ана, жеңу чтоб iPhone 6 немесе бір сыйдың серитификаттарынан керек небәрі-ғана тіркел- және аз күте тұр-...
 
       a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=%D0%A5%D0%BE%D1%87%D0%B5%D1%88%D1%8C%20%D0%B2%D1%8B%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%20%D0%B0%D0%B1%D1%81%D0%BE%D0%BB%D1%8E%D1%82%D0%BD%D0%BE%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20iPhone%206%3F") Әңгімеле- достарға
+      p
+        a.show-rules(href="/rules/") Müsabiqənin şərtləri
       
       .ok-message
         h2.ok-message-title Ура! Барлық алды!
@@ -101,6 +125,7 @@ html(lang="ru")
         h2.register-form-title Қатысушының тірке-
         .time
         fieldset
+          input(type="hidden", name="language", value="az")
           label(for="register-name")
             input.cyr(required="required", autocomplete="off", placeholder="Ат", type="text", name="name", id="register-name")
           label(for="register-surname")
@@ -133,4 +158,23 @@ html(lang="ru")
         nav
           button(type="submit") Тіркел-
 
-
+      .rules
+        .close
+        .message
+          h2.title Müsabiqənin şərtləri
+          p Müsabiqənin təşkilatçısı – 
+            a(href="http://myphone.ae/") myphone.ae
+            |  internet mağazası
+          ul
+            li Müsabiqənin hədiyyə fondu bir ədəd Apple iPhone 6 smartfonu, 200 AZN və 100 AZN nominal dəyərə malik hədiyyə sertifikatlarıdır.
+            li Müsabiqənin keçirilmə müddəti: 20.09.2014 tarixindən 20.10.2014 tarixinə kimi
+            li Müsabiqədə 
+              a(href="http://iphone6.myphone.ae/") http://iphone6.myphone.aes
+              |  səhifəsində qeydiyyatdan keçmiş istifadəçilər iştirak edə bilərlər.
+            li Müsabiqədə yalnız özü haqqında doğru məlumatları təqdim etmiş istifadəçilər iştirak edə bilərlər.
+            li Qaliblərin adları 21.10.2014 tarixində müsabiqə səhifəsində dərc olunacaq. 
+            li Qaliblər təsadüfi yolla seçiləcəklər.
+            li Müsabiqənin qalibləri, qaliblər müəyyən olandan və nəticələr səhifədə dərc olandan sonra telefon zəngi və elektron poçt vasitəsilə məlumatlandırılacaqlar.
+            li Mükafatların təqdim olunacağı məkan və tarix elektron poçt vasitəsilə dəqiqləşdiriləcək.
+            li Mükafatın alınması üçün şəxsiyyəti təsdiq edən sənəd təqdim olunmalıdır.
+            li Müsabiqə çərçivəsində təqdim olunan bütün şəxsi məlumatlar myphone.ae saytının məxfilik qaydalarına uyğun olaraq qorunur, "məxfilik qaydaları" səhifəsinə keçərək, bu barədə məlumat ala bilərsiniz.

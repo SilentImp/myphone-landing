@@ -28,6 +28,7 @@
     "gulp": "~3.8.8",
     "gh-pages": "~0.2.0",
     "path": "~0.4.9",
-    "gulp-w3cjs": "~0.2.1"
+    "gulp-w3cjs": "~0.2.1",
+    "gulp-esformatter": "~1.0.0"
   }
 }
