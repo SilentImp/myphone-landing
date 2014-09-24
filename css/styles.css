@@ -197,6 +197,17 @@ body .page {
     position: relative;
 }
 
+body .page:after {
+    content: ".";
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    text-indent: -999px;
+}
+
 body .page .show-rules {
     margin: 20px 0;
     color: #a7edff;
