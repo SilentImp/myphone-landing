@@ -355,6 +355,7 @@ body .page .register-form nav button:hover {
 
 body .page .register-form fieldset {
     padding: 41px 25px 0;
+    font-size: 0;
 }
 
 body .page .register-form fieldset .code {
