@@ -134,22 +134,24 @@ body
       &:hover
         text-decoration underline
     .rules
+      margin auto
       display none
       z-index 10
       position fixed
       background-color #3a8bba 
-      top 40px
-      bottom 40px
+      top 20px
+      bottom 20px
       left 40px
       right 40px
       box-sizing border-box
       max-width 1000px
-      max-height 780px
       padding 40px 80px 40px 40px  
       font-family Tahoma, Helvetica, Arial, sans-serif
       font-size 17px
       line-height 32px
       color rgba(255, 255, 255, .8)
+      li:before
+        content '- '
       .message
         position absolute
         top 40px
@@ -258,12 +260,13 @@ body
           
       fieldset
         padding 41px 25px 0
+        font-size 0
         .code
           display inline-block
-          vertical-align bottom
+          vertical-align top
           width 70px
           padding 31px 0 0 
-          height 32px 
+          height 35px 
           position relative
           border-bottom 1px solid #b7b7b7
           font-size 12px
@@ -275,6 +278,8 @@ body
             
           .current
             font-size 12px
+            line-height 28px
+            height 28px
             position relative
             &:after
               content ""
