@@ -195,6 +195,18 @@ body .page {
     margin: auto;
     padding: 156px 416px 0 16px;
     position: relative;
+    overflow: hidden;
+}
+
+body .page:after {
+    content: ".";
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    text-indent: -999px;
 }
 
 body .page .show-rules {
@@ -209,7 +221,7 @@ body .page .show-rules:hover {
 }
 
 body .page .rules {
-    margin: auto;
+    margin: 0 auto;
     display: none;
     z-index: 10;
     position: fixed;
@@ -221,6 +233,7 @@ body .page .rules {
     -moz-box-sizing: border-box;
          box-sizing: border-box;
     max-width: 1000px;
+    max-height: 780px;
     padding: 40px 80px 40px 40px;
     font-family: Tahoma, Helvetica, Arial, sans-serif;
     font-size: 17px;

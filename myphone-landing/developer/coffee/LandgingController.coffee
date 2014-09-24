@@ -18,7 +18,7 @@ class LandgingController
 
     $.mask.definitions['c'] = "[А-Яа-я]"
     @form.find('input.tel').mask "(999) 999-99-99"
-    @form.find('input.cyr').mask "cc?cccccccccccccccccccc"
+    # @form.find('input.cyr').mask "cc?cccccccccccccccccccc"
     @form.find('input.code').mask "+9?999"
 
     $('.rules .close').on @itype, @closeRules
