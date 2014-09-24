@@ -377,6 +377,8 @@ body .page .register-form fieldset .code.changed:hover .list {
 
 body .page .register-form fieldset .code .current {
     font-size: 12px;
+    line-height: 28px;
+    height: 28px;
     position: relative;
 }
 
