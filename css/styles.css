@@ -228,6 +228,10 @@ body .page .rules {
     color: rgba(255,255,255,0.8);
 }
 
+body .page .rules li:before {
+    content: '- ';
+}
+
 body .page .rules .message {
     position: absolute;
     top: 40px;
