@@ -360,10 +360,10 @@ body .page .register-form fieldset {
 
 body .page .register-form fieldset .code {
     display: inline-block;
-    vertical-align: bottom;
+    vertical-align: top;
     width: 70px;
     padding: 31px 0 0;
-    height: 32px;
+    height: 35px;
     position: relative;
     border-bottom: 1px solid #b7b7b7;
     font-size: 12px;
