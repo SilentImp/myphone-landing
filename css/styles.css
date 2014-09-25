@@ -209,6 +209,19 @@ body .page:after {
     text-indent: -999px;
 }
 
+body .page .time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    font-size: 10px;
+    line-height: 20px;
+    font-family: monospace;
+    color: #fff;
+    text-align: center;
+}
+
 body .page .show-rules {
     margin: 20px 0;
     color: #a7edff;
@@ -319,19 +332,6 @@ body .page .register-form {
     margin-left: 130px;
     background: -webkit-linear-gradient(top, #1a5774 0%, #ccb27f 100%);
     background: linear-gradient(to bottom, #1a5774 0%, #ccb27f 100%);
-}
-
-body .page .register-form .time {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 20px;
-    font-size: 10px;
-    line-height: 20px;
-    font-family: monospace;
-    color: #fff;
-    text-align: center;
 }
 
 body .page .register-form .register-form-title {
