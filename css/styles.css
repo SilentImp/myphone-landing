@@ -707,9 +707,10 @@ body .page .fb-like:hover {
         height: auto;
     }
 
-    html body .page .ok-message select,
-  html body .page .register-form select {
+    html body .page .ok-message fieldset .code.code-widget .current select,
+  html body .page .register-form fieldset .code.code-widget .current select {
         display: block;
+        opacity: 1;
     }
 
     html body .page .ok-message button,
