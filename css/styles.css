@@ -404,6 +404,7 @@ body .page .register-form fieldset .code .current {
 }
 
 body .page .register-form fieldset .code .current select {
+    display: none;
     z-index: 10;
     background-color: #ff0;
     position: absolute;
@@ -423,7 +424,10 @@ body .page .register-form fieldset .code .current select {
     overflow: visible;
     -webkit-appearance: none;
     -moz-appearance: none;
+    background: none;
+    color: rgba(0,0,0,0);
     outline: none;
+    opacity: 0;
 }
 
 body .page .register-form fieldset .code .current:after {
@@ -708,6 +712,7 @@ body .page .fb-like:hover {
     html body .page .ok-message fieldset .code.code-widget .current select,
   html body .page .register-form fieldset .code.code-widget .current select {
         display: block;
+        opacity: 1;
     }
 
     html body .page .ok-message button,
@@ -769,10 +774,5 @@ body .page .fb-like:hover {
     html body .page .ok-message label.tel,
   html body .page .register-form label.tel {
         width: 80%;
-    }
-
-    html body .page .ok-message label input,
-  html body .page .register-form label input {
-        width: 100%;
     }
 }
