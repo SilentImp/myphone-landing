@@ -62,7 +62,7 @@ html[lang="az"] .page[lang="az"] {
     display: block;
 }
 
-html.no-touch body .page .register-form fieldset .code .current:hover .list {
+html.no-touch body .page .register-form fieldset .code:hover .list {
     display: block;
 }
 
