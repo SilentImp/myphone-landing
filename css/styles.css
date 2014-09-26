@@ -399,6 +399,31 @@ body .page .register-form fieldset .code .current {
     position: relative;
 }
 
+body .page .register-form fieldset .code .current select {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    color: rgba(0,0,0,0);
+    outline: none;
+    opacity: 0;
+}
+
 body .page .register-form fieldset .code .current:after {
     content: "";
     display: block;
@@ -680,6 +705,11 @@ body .page .fb-like:hover {
         background: none;
         line-height: inherit;
         height: auto;
+    }
+
+    html body .page .ok-message select,
+  html body .page .register-form select {
+        display: block;
     }
 
     html body .page .ok-message button,
