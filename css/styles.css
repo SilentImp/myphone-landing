@@ -62,6 +62,10 @@ html[lang="az"] .page[lang="az"] {
     display: block;
 }
 
+html.no-touch body .page .register-form fieldset .code .current:hover .list {
+    display: block;
+}
+
 html {
     height: 100%;
     width: 100%;
@@ -437,10 +441,6 @@ body .page .register-form fieldset .code .current:after {
     right: 16px;
     top: 50%;
     margin-top: -1px;
-}
-
-body .page .register-form fieldset .code:hover .list {
-    display: block;
 }
 
 body .page .register-form fieldset .code .list {
