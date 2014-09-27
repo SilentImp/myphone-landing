@@ -424,7 +424,7 @@ body .page .register-form fieldset .code .current select {
     overflow: visible;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: none;
+    background: rgba(255,0,0,0.5);
     color: rgba(0,0,0,0);
     outline: none;
     opacity: 0;
