@@ -379,7 +379,7 @@ body .page .register-form fieldset {
     font-size: 0;
 }
 
-body .page .register-form fieldset .code {
+body .page .register-form fieldset .code.code-widget {
     display: inline-block;
     vertical-align: top;
     width: 70px;
@@ -391,19 +391,19 @@ body .page .register-form fieldset .code {
     z-index: 50;
 }
 
-body .page .register-form fieldset .code.changed .list,
-body .page .register-form fieldset .code.changed:hover .list {
+body .page .register-form fieldset .code.code-widget.changed .list,
+body .page .register-form fieldset .code.code-widget.changed:hover .list {
     display: none;
 }
 
-body .page .register-form fieldset .code .current {
+body .page .register-form fieldset .code.code-widget .current {
     font-size: 12px;
     line-height: 28px;
     height: 28px;
     position: relative;
 }
 
-body .page .register-form fieldset .code .current select {
+body .page .register-form fieldset .code.code-widget .current select {
     display: none;
     z-index: 10;
     background-color: #ff0;
@@ -430,7 +430,7 @@ body .page .register-form fieldset .code .current select {
     opacity: 0;
 }
 
-body .page .register-form fieldset .code .current:after {
+body .page .register-form fieldset .code.code-widget .current:after {
     content: "";
     display: block;
     width: 0;
@@ -447,7 +447,7 @@ body .page .register-form fieldset .code .current:after {
     margin-top: -1px;
 }
 
-body .page .register-form fieldset .code .list {
+body .page .register-form fieldset .code.code-widget .list {
     display: none;
     position: absolute;
     top: 100%;
@@ -459,43 +459,43 @@ body .page .register-form fieldset .code .list {
     max-height: 128px;
 }
 
-body .page .register-form fieldset .code .list b {
+body .page .register-form fieldset .code.code-widget .list b {
     padding: 0 0 0 16px;
     float: left;
     color: #999;
 }
 
-body .page .register-form fieldset .code .list span {
+body .page .register-form fieldset .code.code-widget .list span {
     padding: 0 32px 0 0;
     float: right;
 }
 
-body .page .register-form fieldset .code .list input:checked+label {
+body .page .register-form fieldset .code.code-widget .list input:checked+label {
     background-color: #bddaeb;
 }
 
-body .page .register-form fieldset .code .list input:checked+label b {
+body .page .register-form fieldset .code.code-widget .list input:checked+label b {
     color: #333;
 }
 
-body .page .register-form fieldset .code .list label {
+body .page .register-form fieldset .code.code-widget .list label {
     clear: left;
     overflow: hidden;
     position: relative;
     cursor: pointer;
 }
 
-body .page .register-form fieldset .code .list label:hover {
+body .page .register-form fieldset .code.code-widget .list label:hover {
     background-color: #d9eaf3;
 }
 
-body .page .register-form fieldset .code .list input {
+body .page .register-form fieldset .code.code-widget .list input {
     position: absolute;
     left: -2000px;
     opacity: 0;
 }
 
-body .page .register-form fieldset .code .list label {
+body .page .register-form fieldset .code.code-widget .list label {
     padding: 0;
     border-style: none;
 }
@@ -759,8 +759,8 @@ body .page .fb-like:hover {
         margin: 0 0 32px;
     }
 
-    html body .page .ok-message .code,
-  html body .page .register-form .code {
+    html body .page .ok-message .code.code-widget,
+  html body .page .register-form .code.code-widget {
         width: 20%;
         border-bottom: 1px solid #fff;
     }
