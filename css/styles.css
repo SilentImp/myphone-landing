@@ -424,7 +424,7 @@ body .page .register-form fieldset .code .current select {
     overflow: visible;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: rgba(255,0,0,0.5);
+    background: none;
     color: rgba(0,0,0,0);
     outline: none;
     opacity: 0;
@@ -673,7 +673,6 @@ body .page .fb-like:hover {
 
     html.touch body .page .register-form fieldset .code.code-widget .current select {
         display: block;
-        opacity: 1;
         z-index: 50;
     }
 
