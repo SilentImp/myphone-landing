@@ -427,7 +427,7 @@ body .page .register-form fieldset .code .current select {
     background: rgba(0,255,0,0.5);
     color: rgba(0,0,0,0);
     outline: none;
-    opacity: 0;
+    opacity: 0.5;
 }
 
 body .page .register-form fieldset .code .current:after {
