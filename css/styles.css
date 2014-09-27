@@ -411,7 +411,7 @@ body .page .register-form fieldset .code .current select {
     top: -31px;
     bottom: -6px;
     right: 0;
-    left: 0;
+    left: -20px;
     -moz-box-sizing: border-box;
          box-sizing: border-box;
     width: 100%;
@@ -424,10 +424,10 @@ body .page .register-form fieldset .code .current select {
     overflow: visible;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: rgba(0,255,0,0.5);
+    background: rgba(0,0,0,0);
     color: rgba(0,0,0,0);
     outline: none;
-    opacity: 0.5;
+    opacity: 0;
 }
 
 body .page .register-form fieldset .code .current:after {
