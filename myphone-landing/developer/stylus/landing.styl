@@ -10,7 +10,6 @@ html[lang="az"]
   .page[lang="az"]
     display block
 
-
 html
   height 100%
   width 100%
@@ -86,7 +85,6 @@ body
         border-radius 12px
         background-color #52a5d6
         transition left .25s
-        
       a
         position relative
         z-index 2
@@ -138,7 +136,7 @@ body
       text-indent -999px
     .time
       position absolute
-      top 0
+      top 77px
       left 0
       right 0
       height 20px
@@ -199,15 +197,27 @@ body
       z-index 2
       display none
       position absolute
-      width 288px
+      width 288px 
       height 512px
-      background-color #fff 
-      top 145px
+      padding 77px 18px 86px 19px 
+      background url('../images/phone.png') 0 0 no-repeat
+      top 68px
       left 50%
-      margin-left 130px
-      background url('../images/done.png') 50% 410px no-repeat,
-                 linear-gradient(to bottom, rgba(26,87,116,1) 0%,rgba(204,178,127,1) 100%)                 
+      margin-left 111px
       line-height 375px
+      &:before
+        content "."
+        position absolute
+        top 77px
+        left 19px
+        width 288px
+        height 512px
+        background url('../images/done.png') 50% 410px no-repeat,
+                   linear-gradient(to bottom, rgba(26,87,116,1) 0%,rgba(204,178,127,1) 100%)
+        z-index -2
+        display block
+        overflow hidden
+        text-indent -999px
       .ok-message-text
         margin 0 25px
         text-align center 
@@ -228,15 +238,25 @@ body
     .register-form
       z-index 1
       position absolute
-      width 288px
+      width 288px 
       height 512px
-      background-color #fff 
-      top 145px
+      padding 77px 18px 86px 19px 
+      background url('../images/phone.png') 0 0 no-repeat
+      top 68px
       left 50%
-      margin-left 130px
-      background linear-gradient(to bottom, rgba(26,87,116,1) 0%,rgba(204,178,127,1) 100%)
-        
-        
+      margin-left 111px
+      &:before
+        content "."
+        position absolute
+        top 77px
+        left 19px
+        width 288px
+        height 512px
+        background linear-gradient(to bottom, rgba(26,87,116,1) 0%,rgba(204,178,127,1) 100%)
+        z-index -2
+        display block
+        overflow hidden
+        text-indent -999px
       .register-form-title
         height 42px
         background url('../images/interface.png') 50% 5px no-repeat
@@ -252,7 +272,7 @@ body
         button
           margin auto
           position absolute
-          bottom 39px
+          bottom 125px
           left 0
           right 0
           height 48px
@@ -268,94 +288,14 @@ body
           cursor pointer
           &:hover
             background-color darken(#29824c, 20%)
-          
       fieldset
         padding 41px 25px 0
         font-size 0
-        .code
-          display inline-block
-          vertical-align top
-          width 70px
-          padding 31px 0 0 
-          height 35px 
-          position relative
-          border-bottom 1px solid #b7b7b7
-          font-size 12px
-          z-index 50
-          &.changed
-            .list,
-            &:hover .list
-              display none
-            
-          .current
-            font-size 12px
-            line-height 28px
-            height 28px
-            position relative
-            &:after
-              content ""
-              display block
-              width 0
-              height 0
-              overflow hidden
-              font-size 0
-              line-height 0
-              border-color #fff transparent transparent
-              border-width 5px 5px 0
-              border-style solid
-              position absolute
-              right 16px
-              top 50%
-              margin-top -1px 
-          &:hover .list
-            display block
-          .list
-            display none
-            position absolute
-            top 100%
-            left -16px
-            background-color #FFF
-            width 270px
-            color #333
-            overflow auto
-            max-height 128px
-            b
-              padding 0 0 0 16px
-              float left
-              color #999 
-            span
-              padding 0 32px 0 0  
-              float right
-            input:checked+label
-              background-color lighten(#4395C5, 65%)
-              b
-                color #333 
-            label
-              clear left
-              overflow hidden
-              position relative
-              cursor pointer
-              &:hover
-                background-color lighten(#4395C5, 80%)
-
-            input
-              position absolute
-              left -2000px
-              opacity 0
-             
-            label
-              padding 0
-              border-style none
             
         label
           display block
           padding 31px 0 0 
           border-bottom 1px solid #b7b7b7
-            
-          &.tel
-            display inline-block
-            vertical-align bottom
-            width 168px 
             
           &.error input
             color #cb1313
@@ -395,11 +335,6 @@ body
 
           &:-ms-input-placeholder
             color rgba(#fff, .6)
-        
-          &.code
-            height 28px
-            line-height 28px
-            padding 0 
           
       &.validation-start input:invalid
           color #cb1313
@@ -415,8 +350,6 @@ body
 
           &:-ms-input-placeholder
             color #cb1313
-          &.code
-            background none
             
     .title
       font-size 32px
@@ -434,7 +367,9 @@ body
       margin 20px 0
       text-decoration none
       display inline-block
+      white-space nowrap
       height 64px
+      font-size 17px 
       line-height 64px
       padding 0 80px 0 30px
       background #247bae url('../images/fb-like.png') 100% 0 no-repeat
@@ -443,10 +378,35 @@ body
         background-position 100% -64px 
     
 @media screen and (max-width: 970px)
-  html body
-    .time
+  html.rules body
+    header
       display none
-      
+    .page
+      padding 0
+      .information,
+      .ok-message,
+      .register-form
+        display none
+      .rules
+        top auto
+        left auto
+        bottom auto
+        right auto
+        position relative
+        padding 25px
+        margin 0
+        max-width none
+        max-height none
+        .close
+          top 20px
+          right 20px
+        .message
+          position relative
+          top auto
+          bottom auto
+          padding 0
+          
+  html body
     &:after
     &:before 
       display none
@@ -454,61 +414,16 @@ body
     header
       width auto
       position relative
-      
     .page
       width auto
-      padding 156px 25px 25px 
+      padding 156px 0 25px 
+      .fb-like
+        font-size 12px 
+      .information
+        padding 0 25px 
       .ok-message,
       .register-form
-        width auto
         position relative
-        left auto
-        bottom auto
-        right auto
+        margin 24px auto
         top auto
-        margin 48px auto
-        background none 
-        line-height inherit 
-        height auto
-        button
-          position relative
-          top auto
-          bottom auto
-          right auto
-          left auto 
-          margin 20px 0 0
-          
-        .register-form-title,
-        .ok-message-title
-          background none
-          text-align left
-          width auto 
-          padding 0
-          font-size 32px
-          line-height 48px
-          margin 0 0 32px 
-          font-weight normal
-          
-        .ok-message-text
-          padding 0
-          margin 0
-          text-align left
-          
-          p 
-            margin 0 0 32px
-            font-size 17px
-            line-height 32px
-            
-        fieldset
-          font-size 0
-          padding 0
-          margin 0 0 32px
-        .code
-          width 20%
-          border-bottom 1px solid #fff
-        label
-          border-bottom-color #fff
-          &.tel
-            width 80%
-          input
-            width 100% 
+        left auto

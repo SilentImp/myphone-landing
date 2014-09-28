@@ -13,12 +13,10 @@ class LandgingController
     window.setInterval @timerUpdate, 1000
     @timerUpdate()
 
-    $('.code-widget').find('input').on 'change', @codeChange
+    @form.find('.code-widget input').on 'change', @codeChange
+    @form.find('select').on 'change', @codeSelectChange
 
-
-    $.mask.definitions['c'] = "[А-Яа-я]"
     @form.find('input.tel').mask "(999) 999-99-99"
-    # @form.find('input.cyr').mask "cc?cccccccccccccccccccc"
     @form.find('input.code').mask "+9?999"
 
     $('.rules .close').on @itype, @closeRules
@@ -34,18 +32,45 @@ class LandgingController
     @form.find('button').on this.itype, @trysubmit
     @form.on 'submit', @submit
 
+    @language = localStorage.language || null
+
+    if @language == null
+      $.getJSON("http://www.telize.com/geoip", @ip2Country)
+    else
+      console.log @language
+
+  ip2Country: (obj)=>
+    switch obj.country_code
+      when 'AZ' 
+        @language = 'AZ'
+        @lang.find('a').trigger 'click'
+      else
+        @language = 'RU'
+    localStorage.language = @language
+
   showRules: (event)=>
     event.preventDefault()
+    @html.addClass 'rules'
     $(event.currentTarget).closest('.page').find('.rules').show()
+    window.scrollTo 0, 0
 
   closeRules: (event)=>
+    @html.removeClass 'rules'
     $(event.currentTarget.parentNode).hide()
+    window.scrollTo 0, 0
     
+  codeSelectChange: (event)=>
+    element = $ event.currentTarget
+    value = element.val()
+    wrapper = element.closest('.code-widget')
+    current = wrapper.find('.current .value')
+    current.text value
+    wrapper.find('input[type="radio"][name="code"][value="'+value+'"]').trigger 'click'
 
   codeChange: (event)=>
     element = $ event.currentTarget
     wrapper = element.closest('.code-widget')
-    current = wrapper.find('.current')
+    current = wrapper.find('.current .value')
     current.text(element.val())
     wrapper.addClass 'changed'
     window.setTimeout(()->
@@ -65,11 +90,14 @@ class LandgingController
     event.preventDefault()
     event.stopPropagation()
     @lang.find('a').toggleClass 'selected'
-    @html.attr 'lang', @lang.find('.selected').attr('data-lang')
+    @language = @lang.find('.selected').attr('data-lang')
+    localStorage.language = @language
+    @html.attr 'lang', @language
 
   submit: (event)=>
     event.preventDefault()
     form = $ event.currentTarget
+    console.log(form.serialize())
     $.post(form.attr('action'), form.serialize()).complete(@formSend)
 
   formSend: (responce)=>
@@ -83,4 +111,4 @@ class LandgingController
 
 
 $(document).ready ()->
-  new LandgingController()
+  document.landing = new LandgingController()

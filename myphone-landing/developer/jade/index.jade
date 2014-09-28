@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 html(lang="ru")
   head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#")
-    
+
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge;chrome=1")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(name="apple-mobile-web-app-capable", content="no")
+    meta(name="viewport", content="maximum-scale = 1.0, user-scalable = no, width = device-width, initial-scale = 1.0")
 
     meta(property="og:locale", content="ru")
     meta(property="og:locale:alternate", content="az")
@@ -19,12 +18,18 @@ html(lang="ru")
     meta(name="description",                  content="Хочешь выиграть абсолютно новый iPhone 6?")
 
     title Хочешь выиграть абсолютно новый iPhone 6? | MyPhone
+
     script(src="js/modernizr/modernizr.js")
+
+    link(rel="stylesheet", href="css/styles.css")
+
+    script(src="js/LocalStoragePolyfill.js")
     script(src="js/jquery/dist/jquery.min.js")
     script(src="js/jquery.maskedinput/jquery.maskedinput.min.js")
     script(src="js/moment/moment.js")
+
     script(src="js/LandgingController.js", async)
-    link(rel="stylesheet", href="css/styles.css")
+
   body
     header
       a(href="http://myphone.ae/")
@@ -35,13 +40,34 @@ html(lang="ru")
         .slider
     
     section.page(lang="ru")
-      h2.title Хочешь выиграть абсолютно новый iPhone 6?
-      p Это не розыгрыш и даже не тестовая страница :) По случаю открытия магазина минимальных цен на смартфоны, мы хотим подарить тебе, случайному везунчику, абсолютно новый iPhone 6!
-      p Для того, чтоб выиграть iPhone 6 или один из подарочных сертификатов нужно всего-лишь зарегистрироваться и немного подождать...
+      .rules
+        .close
+        .message
+          h2.title Условия конкурса
+          p Организатор конкурса — интернет-магазин 
+            a(href="http://myphone.ae/") myphone.ae 
+          ul
+            li Призовой фонд конкурса включает в себя один Apple iPhone 6, и два подарочных сертификата, номиналами 200AZN и 100AZN.
+            li Период проведения Конкурса: c 20.09.2014 по 20.10.2014 включительно.
+            li Принять участие в конкурсе могут все зарегистрированные пользователи сайта
+              a(href="http://iphone6.myphone.ae") http://iphone6.myphone.ae
+              | .
+            li К участию в конкурсе допускаются только пользователи, предоставившие подлинные данные.
+            li Имена Победителей будут опубликованы на финальной странице конкурса 21.10.2014.
+            li Победители будут выбраны случайным образом.
+            li Победители конкурса будут оповещены посредством телефонного звонка и по электронной почте после определения победителей и публикации на странице с результатами конкурса.
+            li Место и время выдачи призов будут уточнены посредством электронной почты.
+            li Для получения Приза, необходимо предъявить удостоверение личности.
+            li Все персональные данные, передаваемые в рамках настоящего конкурса охраняются в соответствии с политикой о конфиденциальности myphone.ae, ознакомиться с ними можно путем перехода на страницу «политика конфиденциальности».
 
-      a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=%D0%A5%D0%BE%D1%87%D0%B5%D1%88%D1%8C%20%D0%B2%D1%8B%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%20%D0%B0%D0%B1%D1%81%D0%BE%D0%BB%D1%8E%D1%82%D0%BD%D0%BE%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20iPhone%206%3F") Рассказать друзьям
-      p
-        a.show-rules(href="/rules/") Условия конкурса
+      section.information
+        h2.title Хочешь выиграть абсолютно новый iPhone 6?
+        p Это не розыгрыш и даже не тестовая страница :) По случаю открытия магазина минимальных цен на смартфоны, мы хотим подарить тебе, случайному везунчику, абсолютно новый iPhone 6!
+        p Для того, чтоб выиграть iPhone 6 или один из подарочных сертификатов нужно всего-лишь зарегистрироваться и немного подождать…
+
+        a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=%D0%A5%D0%BE%D1%87%D0%B5%D1%88%D1%8C%20%D0%B2%D1%8B%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C%20%D0%B0%D0%B1%D1%81%D0%BE%D0%BB%D1%8E%D1%82%D0%BD%D0%BE%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20iPhone%206%3F") Рассказать друзьям
+        p
+          a.show-rules(href="/rules/") Условия конкурса
       
       .ok-message
         h2.ok-message-title Ура! Все получилось!
@@ -56,112 +82,17 @@ html(lang="ru")
         fieldset
           input(type="hidden", name="language", value="ru")
           label(for="register-name-ru")
-            input.cyr(required="required", autocomplete="off" placeholder="Имя", type="text", name="name", id="register-name-ru")
+            input(tabindex="1", required="required", autocomplete="off" placeholder="Имя", type="text", name="name", id="register-name-ru")
           label(for="register-surname-ru")
-            input.cyr(required="required", autocomplete="off", placeholder="Фамилия", type="text", name="surname", id="register-surname-ru")
-          
-          .code.code-widget
-            .current +7
-            .list
-              input(type="radio", name="code", value="+7", id="ru-ru", checked="checked") 
-              label.options(for="ru-ru")
-                span Россия
-                b +7 
-              input(type="radio", name="code", value="+7", id="kz-ru") 
-              label.options(for="kz-ru")
-                span Казахстан
-                b +7 
-              input(type="radio", name="code", value="+996", id="az-ru")
-              label.options(for="az-ru")
-                span Азейрбайджан
-                b +996 
-              input(type="radio", name="code", value="+38", id="ua-ru") 
-              label.options(for="ua-ru")
-                span Украина
-                b +38
-
+            input(tabindex="2", required="required", autocomplete="off", placeholder="Фамилия", type="text", name="surname", id="register-surname-ru")
           label.tel(for="register-tel-ru")
-            input.tel(required="required", autocomplete="off", placeholder="Номер телефона", type="tel", name="tel", id="register-tel-ru")
+            input.tel(tabindex="3", required="required", autocomplete="off", placeholder="Номер телефона", type="tel", name="tel", id="register-tel-ru")
           label(for="register-email-ru")
-            input(required="required", autocomplete="off", placeholder="E-mail", type="email", name="email", id="register-email-ru")
+            input(tabindex="4", required="required", autocomplete="off", placeholder="E-mail", type="email", name="email", id="register-email-ru")
         nav
-          button(type="submit") Зарегистрироваться
-
-      .rules
-        .close
-        .message
-          h2.title Условия конкурса
-          p Организатор конкурса — интернет-магазин 
-            a(href="http://myphone.ae/") myphone.ae 
-          ul
-            li Призовой фонд конкурса включает в себя один Apple iPhone 6, и два подарочных сертификата, номиналами 200AZN и 100AZN
-            li Период проведения Конкурса: c 20.09.2014 по 20.10.2014 включительно.
-            li Принять участие в конкурсе могут все зарегистрированные пользователи сайта 
-              a(href="http://iphone6.myphone.ae") http://iphone6.myphone.ae
-            li К участию в конкурсе допускаются только пользователи, предоставившие подлинные данные.
-            li Имена Победителей будут опубликованы на финальной странице конкурса 21.10.2014.
-            li Победители будут выбраны случайным образом.
-            li Победители конкурса будут оповещены посредством телефонного звонка и по электронной почте после определения победителей и публикации на странице с результатами конкурса.
-            li Место и время выдачи призов будут уточнены посредством электронной почты.
-            li Для получения Приза, необходимо предъявить удостоверение личности.
-            li Все персональные данные, передаваемые в рамках настоящего конкурса охраняются в соответствии с политикой о конфиденциальности myphone.ae, ознакомиться с ними можно путем перехода на страницу «политика конфиденциальности».
-
+          button(tabindex="5", type="submit") Зарегистрироваться
 
     section.page(lang="az")
-      h2.title Yeni iPhone 6 smartfonunu qazanmaq istəyirsən?
-      p Minimal qiymətli smartfonlar mağazasının açılması münasibətilə, biz sənə-təsadüfi bəxtəvərə, Apple Inc. şirkətinin ən yaxşısını, yeni iPhone 6 smartfonunu hədiyyə etmək istəyirik!
-      p iPhone 6 smartfonunu və ya hədiyyə sertifikatlarından birini qazanmaq üçün sadəcə qeydiyyatdan keçmək və bir az gözləmək lazımdır..
-      p Qeydiyyatdan keçmiş bütün istifadəçiləri xoş bir sürpriz gözləyir :)
-
-      a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=Yeni+iPhone+6+smartfonunu+qazanmaq+istəyirsən%3F&oq=Apple+Inc.+şirkətindən+ən+yaxşısını%2C+yeni+iPhone+6+smartfonunu+qazanmaq+istəyirsən%3F") Dostlarla paylaşmaq
-      p
-        a.show-rules(href="/rules/") Müsabiqənin şərtləri
-      
-      .ok-message
-        h2.ok-message-title Əla! işimiz alindi
-        .time
-        .ok-message-text
-          p Siz myphone təsadüfi lotereyanın iştirakçısız və iPhone 6 qazana bilərsiz!
-          p Lotereyanın nəticələri haqqında e-poçt vasitəsilə sizə xəbər verələcək.
-          p Qeydiyyatdan keçdiyiniz üçün təşəkkür!
-          a.ok-message-ok(href="http://myphone.ae/")
-
-      form.register-form(action="http://myphone.ae/register/", method="post")
-        h2.register-form-title Қатысушының тірке-
-        .time
-        fieldset
-          input(type="hidden", name="language", value="az")
-          label(for="register-name")
-            input.cyr(required="required", autocomplete="off", placeholder="Ат", type="text", name="name", id="register-name")
-          label(for="register-surname")
-            input.cyr(required="required", autocomplete="off", placeholder="Фамилия", type="text", name="surname", id="register-surname")
-
-          .code.code-widget
-            .current +7
-            .list
-              input(type="radio", name="code", value="+7", id="ru-kz", checked="checked") 
-              label.options(for="ru-kz")
-                span Россия
-                b +7 
-              input(type="radio", name="code", value="+7", id="kz-kz") 
-              label.options(for="kz-kz")
-                span Казахстан
-                b +7 
-              input(type="radio", name="code", value="+996", id="az-kz")
-              label.options(for="az-kz")
-                span Азейрбайджан
-                b +996 
-              input(type="radio", name="code", value="+38", id="ua-kz") 
-              label.options(for="ua-kz")
-                span Украина
-                b +38
-
-          label.tel(for="register-tel")
-            input.tel(required="required", autocomplete="off", placeholder="Телефонның нөмірі", type="tel", name="tel", id="register-tel")
-          label(for="register-email")
-            input(required="required", autocomplete="off", placeholder="E-mail", type="email", name="email", id="register-email")
-        nav
-          button(type="submit") Тіркел-
 
       .rules
         .close
@@ -174,7 +105,7 @@ html(lang="ru")
             li Müsabiqənin hədiyyə fondu bir ədəd Apple iPhone 6 smartfonu, 200 AZN və 100 AZN nominal dəyərə malik hədiyyə sertifikatlarıdır.
             li Müsabiqənin keçirilmə müddəti: 20.09.2014 tarixindən 20.10.2014 tarixinə kimi
             li Müsabiqədə 
-              a(href="http://iphone6.myphone.ae/") http://iphone6.myphone.aes
+              a(href="http://iphone6.myphone.ae/") http://iphone6.myphone.ae
               |  səhifəsində qeydiyyatdan keçmiş istifadəçilər iştirak edə bilərlər.
             li Müsabiqədə yalnız özü haqqında doğru məlumatları təqdim etmiş istifadəçilər iştirak edə bilərlər.
             li Qaliblərin adları 21.10.2014 tarixində müsabiqə səhifəsində dərc olunacaq. 
@@ -183,3 +114,38 @@ html(lang="ru")
             li Mükafatların təqdim olunacağı məkan və tarix elektron poçt vasitəsilə dəqiqləşdiriləcək.
             li Mükafatın alınması üçün şəxsiyyəti təsdiq edən sənəd təqdim olunmalıdır.
             li Müsabiqə çərçivəsində təqdim olunan bütün şəxsi məlumatlar myphone.ae saytının məxfilik qaydalarına uyğun olaraq qorunur, "məxfilik qaydaları" səhifəsinə keçərək, bu barədə məlumat ala bilərsiniz.
+      
+      section.information
+        h2.title Yeni iPhone 6 smartfonunu qazanmaq istəyirsən?
+        p Minimal qiymətli smartfonlar mağazasının açılması münasibətilə, biz sənə-təsadüfi bəxtəvərə, Apple Inc. şirkətinin ən yaxşısını, yeni iPhone 6 smartfonunu hədiyyə etmək istəyirik!
+        p iPhone 6 smartfonunu və ya hədiyyə sertifikatlarından birini qazanmaq üçün sadəcə qeydiyyatdan keçmək və bir az gözləmək lazımdır…
+        p Qeydiyyatdan keçmiş bütün istifadəçiləri xoş bir sürpriz gözləyir :)
+
+        a.fb-like(target="_blank", href="http://www.facebook.com/sharer.php?u=http://myphone.ae/&amp;t=Yeni+iPhone+6+smartfonunu+qazanmaq+istəyirsən%3F&oq=Apple+Inc.+şirkətindən+ən+yaxşısını%2C+yeni+iPhone+6+smartfonunu+qazanmaq+istəyirsən%3F") Dostlarla paylaşmaq
+        p
+          a.show-rules(href="/rules/") Müsabiqənin şərtləri
+        
+      .ok-message
+        h2.ok-message-title Əla! işimiz alindi
+        .time
+        .ok-message-text
+          p Siz myphone təsadüfi lotereyanın iştirakçısız və iPhone 6 qazana bilərsiz!
+          p Lotereyanın nəticələri haqqında e-poçt vasitəsilə sizə xəbər verələcək.
+          p Qeydiyyatdan keçdiyiniz üçün təşəkkür!
+          a.ok-message-ok(href="http://myphone.ae/")
+
+      form.register-form(action="http://myphone.ae/register/", method="post")
+        h2.register-form-title İstifadəçinin qeydiyyəti
+        .time
+        fieldset
+          input(type="hidden", name="language", value="az")
+          label(for="register-name")
+            input(tabindex="1", required="required", autocomplete="off", placeholder="Adı", type="text", name="name", id="register-name")
+          label(for="register-surname")
+            input(tabindex="2", required="required", autocomplete="off", placeholder="Soyadı", type="text", name="surname", id="register-surname")
+          label.tel(for="register-tel")
+            input.tel(tabindex="3", required="required", autocomplete="off", placeholder="Telefon nömrəsi", type="tel", name="tel", id="register-tel")
+          label(for="register-email")
+            input(tabindex="4", required="required", autocomplete="off", placeholder="E-mail", type="email", name="email", id="register-email")
+        nav
+          button(tabindex="5", type="submit") Qeydiyyatdan keç
