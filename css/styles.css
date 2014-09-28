@@ -528,14 +528,14 @@ body .page .fb-like:hover {
         top: auto;
         height: 550px;
         left: 50%;
-        margin-left: -207px;
+        margin-left: -209px;
     }
 
     html body:before {
         top: auto;
-        height: 764px;
+        height: 840px;
         left: 50%;
-        margin-left: -280px;
+        margin-left: -279px;
     }
 
     html body header {
