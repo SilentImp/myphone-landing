@@ -565,7 +565,7 @@ body .page .fb-like:hover {
     }
 }
 
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 500px) {
     html.rules body header {
         display: none;
     }
