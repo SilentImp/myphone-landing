@@ -36,8 +36,8 @@ class LandgingController
 
     if @language == null
       $.getJSON("http://www.telize.com/geoip", @ip2Country)
-    else
-      console.log @language
+    else if @language == 'AZ'
+      @lang.find('a').trigger 'click'
 
   ip2Country: (obj)=>
     switch obj.country_code
@@ -97,7 +97,6 @@ class LandgingController
   submit: (event)=>
     event.preventDefault()
     form = $ event.currentTarget
-    console.log(form.serialize())
     $.post(form.attr('action'), form.serialize()).complete(@formSend)
 
   formSend: (responce)=>
