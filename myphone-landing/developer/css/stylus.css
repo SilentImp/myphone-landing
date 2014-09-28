@@ -246,6 +246,8 @@ body .page .ok-message {
     left: 50%;
     margin-left: 111px;
     line-height: 375px;
+    max-width: 100%;
+    background-size: 100% 100%;
 }
 
 body .page .ok-message:before {
@@ -293,6 +295,8 @@ body .page .register-form {
     top: 68px;
     left: 50%;
     margin-left: 111px;
+    max-width: 100%;
+    background-size: 100% 100%;
 }
 
 body .page .register-form:before {
@@ -533,6 +537,6 @@ body .page .fb-like:hover {
         position: relative;
         margin: 24px auto;
         top: auto;
-        left: auto;
+        left: -3px;
     }
 }

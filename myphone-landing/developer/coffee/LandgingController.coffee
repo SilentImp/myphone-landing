@@ -1,27 +1,20 @@
 class LandgingController
   constructor: ->
-
     @itype = 'click';
     @html = $ 'html'
     if @html.hasClass('touch')
       @itype = 'touchstart'
-
     @form = $('.register-form')
-    
     @timer = $('.time')
     @ti = 0
     window.setInterval @timerUpdate, 1000
     @timerUpdate()
-
-    @form.find('.code-widget input').on 'change', @codeChange
-    @form.find('select').on 'change', @codeSelectChange
 
     @form.find('input.tel').mask "(999) 999-99-99"
     @form.find('input.code').mask "+9?999"
 
     $('.rules .close').on @itype, @closeRules
     $('.show-rules').on @itype, @showRules
-    
     
     @message = this.form.prev()
 
@@ -50,33 +43,25 @@ class LandgingController
 
   showRules: (event)=>
     event.preventDefault()
+    event.stopPropagation()
+    if event.gesture
+      event.gesture.stopPropagation()
+      event.gesture.preventDefault()
     @html.addClass 'rules'
     $(event.currentTarget).closest('.page').find('.rules').show()
     window.scrollTo 0, 0
+    return false
 
   closeRules: (event)=>
+    event.preventDefault()
+    event.stopPropagation()
+    if event.gesture
+      event.gesture.stopPropagation()
+      event.gesture.preventDefault()
     @html.removeClass 'rules'
     $(event.currentTarget.parentNode).hide()
     window.scrollTo 0, 0
-    
-  codeSelectChange: (event)=>
-    element = $ event.currentTarget
-    value = element.val()
-    wrapper = element.closest('.code-widget')
-    current = wrapper.find('.current .value')
-    current.text value
-    wrapper.find('input[type="radio"][name="code"][value="'+value+'"]').trigger 'click'
-
-  codeChange: (event)=>
-    element = $ event.currentTarget
-    wrapper = element.closest('.code-widget')
-    current = wrapper.find('.current .value')
-    current.text(element.val())
-    wrapper.addClass 'changed'
-    window.setTimeout(()->
-      wrapper.removeClass 'changed'
-    , 500)
-
+    return false
 
   timerUpdate: =>
     if (@ti%2)==0
@@ -89,15 +74,25 @@ class LandgingController
   selectLanguage: (event)=>
     event.preventDefault()
     event.stopPropagation()
+    if event.gesture
+      event.gesture.stopPropagation()
+      event.gesture.preventDefault()
     @lang.find('a').toggleClass 'selected'
     @language = @lang.find('.selected').attr('data-lang')
     localStorage.language = @language
     @html.attr 'lang', @language
+    return false
 
   submit: (event)=>
     event.preventDefault()
+    event.stopPropagation()
+    if event.gesture
+      event.gesture.stopPropagation()
+      event.gesture.preventDefault()
     form = $ event.currentTarget
-    $.post(form.attr('action'), form.serialize()).complete(@formSend)
+    if form.find('input:invalid').length==0
+      $.post(form.attr('action'), form.serialize()).complete(@formSend)
+    return false
 
   formSend: (responce)=>
     @form.hide()
@@ -108,6 +103,5 @@ class LandgingController
     form = button.closest('form.register-form')
     form.addClass('validation-start')
 
-
 $(document).ready ()->
-  document.landing = new LandgingController()
+  new LandgingController()
