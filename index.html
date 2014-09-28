@@ -16,11 +16,12 @@
     <meta name="description" content="Хочешь выиграть абсолютно новый iPhone 6?">
     <title>Хочешь выиграть абсолютно новый iPhone 6? | MyPhone</title>
     <script src="js/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/LocalStoragePolyfill.js"></script>
     <script src="js/jquery/dist/jquery.min.js"></script>
     <script src="js/jquery.maskedinput/jquery.maskedinput.min.js"></script>
     <script src="js/moment/moment.js"></script>
     <script src="js/LandgingController.js" async="async"></script>
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -71,20 +72,20 @@
             <fieldset>
                 <input type="hidden" name="language" value="ru">
                 <label for="register-name-ru">
-                    <input required="required" autocomplete="off" placeholder="Имя" type="text" name="name" id="register-name-ru" class="cyr">
+                    <input tabindex="1" required="required" autocomplete="off" placeholder="Имя" type="text" name="name" id="register-name-ru">
                 </label>
                 <label for="register-surname-ru">
-                    <input required="required" autocomplete="off" placeholder="Фамилия" type="text" name="surname" id="register-surname-ru" class="cyr">
+                    <input tabindex="2" required="required" autocomplete="off" placeholder="Фамилия" type="text" name="surname" id="register-surname-ru">
                 </label>
                 <label for="register-tel-ru" class="tel">
-                    <input required="required" autocomplete="off" placeholder="Номер телефона" type="tel" name="tel" id="register-tel-ru" class="tel">
+                    <input tabindex="3" required="required" autocomplete="off" placeholder="Номер телефона" type="tel" name="tel" id="register-tel-ru" class="tel">
                 </label>
                 <label for="register-email-ru">
-                    <input required="required" autocomplete="off" placeholder="E-mail" type="email" name="email" id="register-email-ru">
+                    <input tabindex="4" required="required" autocomplete="off" placeholder="E-mail" type="email" name="email" id="register-email-ru">
                 </label>
             </fieldset>
             <nav>
-                <button type="submit">Зарегистрироваться</button>
+                <button tabindex="5" type="submit">Зарегистрироваться</button>
             </nav>
         </form>
     </section>
@@ -132,20 +133,20 @@
             <fieldset>
                 <input type="hidden" name="language" value="az">
                 <label for="register-name">
-                    <input required="required" autocomplete="off" placeholder="Adı" type="text" name="name" id="register-name" class="cyr">
+                    <input tabindex="1" required="required" autocomplete="off" placeholder="Adı" type="text" name="name" id="register-name">
                 </label>
                 <label for="register-surname">
-                    <input required="required" autocomplete="off" placeholder="Soyadı" type="text" name="surname" id="register-surname" class="cyr">
+                    <input tabindex="2" required="required" autocomplete="off" placeholder="Soyadı" type="text" name="surname" id="register-surname">
                 </label>
                 <label for="register-tel" class="tel">
-                    <input required="required" autocomplete="off" placeholder="Telefon nömrəsi" type="tel" name="tel" id="register-tel" class="tel">
+                    <input tabindex="3" required="required" autocomplete="off" placeholder="Telefon nömrəsi" type="tel" name="tel" id="register-tel" class="tel">
                 </label>
                 <label for="register-email">
-                    <input required="required" autocomplete="off" placeholder="E-mail" type="email" name="email" id="register-email">
+                    <input tabindex="4" required="required" autocomplete="off" placeholder="E-mail" type="email" name="email" id="register-email">
                 </label>
             </fieldset>
             <nav>
-                <button type="submit">Qeydiyyatdan keç</button>
+                <button tabindex="5" type="submit">Qeydiyyatdan keç</button>
             </nav>
         </form>
     </section>
