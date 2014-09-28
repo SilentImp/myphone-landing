@@ -524,6 +524,18 @@ body .page .fb-like:hover {
 }
 
 @media screen and (max-width: 970px) {
+    html body:after {
+        top: auto;
+        height: 724px;
+        left: 50%;
+        margin-left: -232px;
+    }
+
+    html body:before {
+        display: none;
+        background: none;
+    }
+
     html body header {
         width: auto;
         position: relative;
