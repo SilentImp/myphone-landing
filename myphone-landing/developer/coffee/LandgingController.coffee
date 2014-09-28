@@ -27,16 +27,17 @@ class LandgingController
 
     @language = localStorage.language || null
 
+
     if @language == null
       $.getJSON("http://www.telize.com/geoip", @ip2Country)
     else if @language == 'AZ'
-      @lang.find('a').trigger 'click'
+      @lang.trigger(this.itype)
 
   ip2Country: (obj)=>
     switch obj.country_code
       when 'AZ' 
         @language = 'AZ'
-        @lang.find('a').trigger 'click'
+        @lang.trigger(this.itype)
       else
         @language = 'RU'
     localStorage.language = @language
