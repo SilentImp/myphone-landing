@@ -62,10 +62,6 @@ html[lang="az"] .page[lang="az"] {
     display: block;
 }
 
-html.no-touch body .page .register-form fieldset .code:hover .list {
-    display: block;
-}
-
 html {
     height: 100%;
     width: 100%;
@@ -215,7 +211,7 @@ body .page:after {
 
 body .page .time {
     position: absolute;
-    top: 0;
+    top: 77px;
     left: 0;
     right: 0;
     height: 20px;
@@ -295,13 +291,27 @@ body .page .ok-message {
     position: absolute;
     width: 288px;
     height: 512px;
-    background-color: #fff;
-    top: 145px;
+    padding: 77px 18px 86px 19px;
+    background: url("../images/phone.png") 0 0 no-repeat;
+    top: 68px;
     left: 50%;
-    margin-left: 130px;
+    margin-left: 111px;
+    line-height: 375px;
+}
+
+body .page .ok-message:before {
+    content: ".";
+    position: absolute;
+    top: 77px;
+    left: 19px;
+    width: 288px;
+    height: 512px;
     background: url("../images/done.png") 50% 410px no-repeat, -webkit-linear-gradient(top, #1a5774 0%, #ccb27f 100%);
     background: url("../images/done.png") 50% 410px no-repeat, linear-gradient(to bottom, #1a5774 0%, #ccb27f 100%);
-    line-height: 375px;
+    z-index: -2;
+    display: block;
+    overflow: hidden;
+    text-indent: -999px;
 }
 
 body .page .ok-message .ok-message-text {
@@ -330,12 +340,26 @@ body .page .register-form {
     position: absolute;
     width: 288px;
     height: 512px;
-    background-color: #fff;
-    top: 145px;
+    padding: 77px 18px 86px 19px;
+    background: url("../images/phone.png") 0 0 no-repeat;
+    top: 68px;
     left: 50%;
-    margin-left: 130px;
+    margin-left: 111px;
+}
+
+body .page .register-form:before {
+    content: ".";
+    position: absolute;
+    top: 77px;
+    left: 19px;
+    width: 288px;
+    height: 512px;
     background: -webkit-linear-gradient(top, #1a5774 0%, #ccb27f 100%);
     background: linear-gradient(to bottom, #1a5774 0%, #ccb27f 100%);
+    z-index: -2;
+    display: block;
+    overflow: hidden;
+    text-indent: -999px;
 }
 
 body .page .register-form .register-form-title {
@@ -354,7 +378,7 @@ body .page .register-form .register-form-title {
 body .page .register-form nav button {
     margin: auto;
     position: absolute;
-    bottom: 39px;
+    bottom: 125px;
     left: 0;
     right: 0;
     height: 48px;
@@ -379,137 +403,10 @@ body .page .register-form fieldset {
     font-size: 0;
 }
 
-body .page .register-form fieldset .code.code-widget {
-    display: inline-block;
-    vertical-align: top;
-    width: 70px;
-    padding: 31px 0 0;
-    height: 35px;
-    position: relative;
-    border-bottom: 1px solid #b7b7b7;
-    font-size: 12px;
-    z-index: 50;
-}
-
-body .page .register-form fieldset .code.code-widget.changed .list,
-body .page .register-form fieldset .code.code-widget.changed:hover .list {
-    display: none;
-}
-
-body .page .register-form fieldset .code.code-widget .current {
-    font-size: 12px;
-    line-height: 28px;
-    height: 28px;
-    position: relative;
-}
-
-body .page .register-form fieldset .code.code-widget .current select {
-    display: none;
-    z-index: 10;
-    background-color: #ff0;
-    position: absolute;
-    top: -31px;
-    bottom: -6px;
-    right: 0;
-    left: -20px;
-    -moz-box-sizing: border-box;
-         box-sizing: border-box;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    border-style: none;
-    box-shadow: none;
-    border-radius: 0;
-    overflow: visible;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: rgba(0,0,0,0);
-    color: rgba(0,0,0,0);
-    outline: none;
-    opacity: 0;
-}
-
-body .page .register-form fieldset .code.code-widget .current:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    font-size: 0;
-    line-height: 0;
-    border-color: #fff transparent transparent;
-    border-width: 5px 5px 0;
-    border-style: solid;
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    margin-top: -1px;
-}
-
-body .page .register-form fieldset .code.code-widget .list {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: -16px;
-    background-color: #fff;
-    width: 270px;
-    color: #333;
-    overflow: auto;
-    max-height: 128px;
-}
-
-body .page .register-form fieldset .code.code-widget .list b {
-    padding: 0 0 0 16px;
-    float: left;
-    color: #999;
-}
-
-body .page .register-form fieldset .code.code-widget .list span {
-    padding: 0 32px 0 0;
-    float: right;
-}
-
-body .page .register-form fieldset .code.code-widget .list input:checked+label {
-    background-color: #bddaeb;
-}
-
-body .page .register-form fieldset .code.code-widget .list input:checked+label b {
-    color: #333;
-}
-
-body .page .register-form fieldset .code.code-widget .list label {
-    clear: left;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-}
-
-body .page .register-form fieldset .code.code-widget .list label:hover {
-    background-color: #d9eaf3;
-}
-
-body .page .register-form fieldset .code.code-widget .list input {
-    position: absolute;
-    left: -2000px;
-    opacity: 0;
-}
-
-body .page .register-form fieldset .code.code-widget .list label {
-    padding: 0;
-    border-style: none;
-}
-
 body .page .register-form fieldset label {
     display: block;
     padding: 31px 0 0;
     border-bottom: 1px solid #b7b7b7;
-}
-
-body .page .register-form fieldset label.tel {
-    display: inline-block;
-    vertical-align: bottom;
-    width: 168px;
 }
 
 body .page .register-form fieldset label.error input {
@@ -564,12 +461,6 @@ body .page .register-form fieldset input:-ms-input-placeholder {
     color: rgba(255,255,255,0.6);
 }
 
-body .page .register-form fieldset input.code {
-    height: 28px;
-    line-height: 28px;
-    padding: 0;
-}
-
 body .page .register-form.validation-start input:invalid {
     color: #cb1313;
     background: url("../images/error.png") 100% 50% no-repeat;
@@ -589,10 +480,6 @@ body .page .register-form.validation-start input:invalid::-moz-placeholder {
 
 body .page .register-form.validation-start input:invalid:-ms-input-placeholder {
     color: #cb1313;
-}
-
-body .page .register-form.validation-start input:invalid.code {
-    background: none;
 }
 
 body .page .title {
@@ -671,15 +558,6 @@ body .page .fb-like:hover {
         padding: 0;
     }
 
-    html.touch body .page .register-form fieldset .code.code-widget .current select {
-        display: block;
-        z-index: 50;
-    }
-
-    html body .time {
-        display: none;
-    }
-
     html body:after,
   html body:before {
         display: none;
@@ -702,76 +580,9 @@ body .page .fb-like:hover {
 
     html body .page .ok-message,
   html body .page .register-form {
-        width: auto;
         position: relative;
-        left: auto;
-        bottom: auto;
-        right: auto;
+        margin: auto;
         top: auto;
-        margin: 48px auto;
-        background: none;
-        line-height: inherit;
-        height: auto;
-    }
-
-    html body .page .ok-message button,
-  html body .page .register-form button {
-        position: relative;
-        top: auto;
-        bottom: auto;
-        right: auto;
         left: auto;
-        margin: 20px 0 0;
-    }
-
-    html body .page .ok-message .register-form-title,
-  html body .page .register-form .register-form-title,
-  html body .page .ok-message .ok-message-title,
-  html body .page .register-form .ok-message-title {
-        background: none;
-        text-align: left;
-        width: auto;
-        padding: 0;
-        font-size: 32px;
-        line-height: 48px;
-        margin: 0 0 32px;
-        font-weight: normal;
-    }
-
-    html body .page .ok-message .ok-message-text,
-  html body .page .register-form .ok-message-text {
-        padding: 0;
-        margin: 0;
-        text-align: left;
-    }
-
-    html body .page .ok-message .ok-message-text p,
-  html body .page .register-form .ok-message-text p {
-        margin: 0 0 32px;
-        font-size: 17px;
-        line-height: 32px;
-    }
-
-    html body .page .ok-message fieldset,
-  html body .page .register-form fieldset {
-        font-size: 0;
-        padding: 0;
-        margin: 0 0 32px;
-    }
-
-    html body .page .ok-message .code.code-widget,
-  html body .page .register-form .code.code-widget {
-        width: 20%;
-        border-bottom: 1px solid #fff;
-    }
-
-    html body .page .ok-message label,
-  html body .page .register-form label {
-        border-bottom-color: #fff;
-    }
-
-    html body .page .ok-message label.tel,
-  html body .page .register-form label.tel {
-        width: 80%;
     }
 }
