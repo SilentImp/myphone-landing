@@ -470,6 +470,48 @@ body .page .fb-like:hover {
 }
 
 @media screen and (max-width: 970px) {
+    html body:after {
+        top: auto;
+        height: 550px;
+        left: 50%;
+        margin-left: -209px;
+    }
+
+    html body:before {
+        top: auto;
+        height: 792px;
+        left: 50%;
+        margin-left: -279px;
+    }
+
+    html body header {
+        width: auto;
+        position: relative;
+    }
+
+    html body .page {
+        width: auto;
+        padding: 156px 0 25px;
+    }
+
+    html body .page .fb-like {
+        font-size: 12px;
+    }
+
+    html body .page .information {
+        padding: 0 25px;
+    }
+
+    html body .page .ok-message,
+  html body .page .register-form {
+        position: relative;
+        margin: 24px auto;
+        top: auto;
+        left: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
     html.rules body header {
         display: none;
     }
